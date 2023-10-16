@@ -1,0 +1,18 @@
+body{
+    background: tan;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: black;
+    text-align: center;
+}
+.assign{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    background: gray;
+}
+.assign img{
+    width: 200px;
+    padding: 10px;
+}
