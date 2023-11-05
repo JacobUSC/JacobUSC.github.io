@@ -6,13 +6,23 @@ h1{
     color: black;
     text-align: center;
 }
-.assign{
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+.assign {
     display: flex;
     padding: 10px;
     margin: 10px;
     background: gray;
+    border-radius: 20px;
 }
-.assign img{
+.assign img {
     width: 200px;
     padding: 10px;
+    border: 2px solid black;
 }
