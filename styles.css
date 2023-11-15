@@ -9,30 +9,39 @@ h1 {
 h2 {
     color:  aqua;
 }
+h2:hover {
+    color: lawngreen;
+}
 p {
     color: aqua;
 }
 a {
     text-decoration: none;
-    color: aqua;
 }
 a:hover {
     text-decoration: none;
-    color: lawngreen;
 }
 .assign {
     display: flex;
+    flex-wrap:wrap;
+}
+.assign-det {
+    width:21%;
     padding: 10px;
     margin: 10px;
+    margin-bottom: 30px;
     background: deeppink;
-    border-radius: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 8px #401201;
 }
 .assign img {
     width: 200px;
-    margin: 10px;
-    border: 4px solid cyan;
+    border: 2px solid cyan;
+    margin-right:20px;
+    border-radius: 15px;
+    display:block;
+    margin:auto;
 }
 .assign img:hover {
-    width: 300px;
-    border: 4px solid lawngreen;
+    border: 2px solid lawngreen;
 }
