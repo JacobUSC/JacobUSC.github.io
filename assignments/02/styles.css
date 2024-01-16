@@ -1,0 +1,97 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: url(images/background.png);
+}
+
+/* Structure */
+
+#content {
+    background: black;
+    padding: 5px;
+    width: 80%;
+    margin: auto; /* center horizontally */
+    border-radius: 5px;
+}
+
+#header {
+    display: flex;
+    border-bottom: solid lime;
+}
+
+.item {
+    display: flex;
+    border: solid lime;
+    border-radius: 15px;
+}
+
+.item img {
+    border-radius: 15px;
+    border: solid lime;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+.item p {
+    padding: 10px;
+}
+
+table {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    border: solid lime;
+    padding: 10px;
+}
+
+/* Navigation */
+
+.navbar {
+    padding: 15px;
+    margin: auto;
+}
+
+.navbar a {
+    border: solid lime;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: lime;
+}
+
+.navbar a:hover {
+    color: white;
+    background: lime;
+    border: solid white;
+}
+
+/* Typography */
+
+h1 {
+    margin: auto;
+    color: lime;
+}
+
+h2 {
+    color: lime;
+    padding-left: 25px;
+}
+
+p {
+    color: lime;
+}
+
+th {
+    color: lime;
+    border: solid lime;
+    padding: 5px;
+}
+
+td {
+    border: solid lime;
+    color: lime;
+    text-align: center;
+    padding: 5px;
+}
