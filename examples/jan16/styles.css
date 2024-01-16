@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(images/metal-bg.jpg);
+}
+
+/* Structure */
+
+#content {
+    background: white;
+    padding: 5px;
+    width: 80%;
+    margin: auto; /* center horizontally */
+    border-radius: 5px;
+}
+
+/* Navigation */
+
+#main-nav a {
+    color: pink;
+    text-decoration: none; /* Removes Underline */
+    background: blueviolet;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+#main-nav a:hover {
+    background: deeppink;
+}
+
+/* Typography */
+
+h1 {
+    color: darkslategrey;
+}
+
+.special {
+    color: green;
+}
