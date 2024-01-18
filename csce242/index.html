@@ -6,18 +6,42 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="boarder">
-            <h1>CSCE 242-001 Web Applications</h1>
-            <div id="content">
-            <h2>Jacob Russell</h2>
-            <p>CSCE 242 is class about learning how to use web development tools including html, css, and javascript.</p>
-            <h2>Assignments</h2>
-            <nav id="assignments">
-                <ul>
-                    <li><a href="assignments/01/index.html">Assignment 1</a></li>
-                    <li><a href="assignments/02/index.html">Assignment 2</a></li>
-                </ul>
-            </nav>
+        <div id="content">
+            <header id="main-header">
+                <div class="columns">
+                    <h1>CSCE 242-001 Web Applications</h1>
+                    <h3>Jacob Russell</h3>
+                </div>
+            </header>
+            <main id="main-content">
+                <h2>Assignments</h2>
+                <div class="columns">
+                    <section class="assignment">
+                        <a href="assignments/01/index.html">
+                            <h3>Assignment 1 - Basic HTML</h3>
+                            <img src="images/thumbnail-1.PNG">
+                            <p>This assignment showcases the use of basic HTML.</p>
+                        </a>
+                    </section>
+                    <section class="assignment">
+                        <a href="assignments/02/index.html">
+                            <h3>Assignment 2 - Basic CSS</h3>
+                            <img src="images/thumbnail-2.PNG">
+                            <p>This assignment showcases the use of basic CSS.</p>
+                        </a>
+                    </section>
+                    <section class="assignment">
+                        <a href="assignments/03/index.html">
+                            <h3>Assignment 3 - Page layout</h3>
+                            <img src="">
+                            <p>This assignment showcases page layout elements with HTML & CSS </p>
+                        </a>    
+                    </section>
+                </div>
+            </main>
+            <footer id="main-footer">
+                <p>CSCE 242 is class about learning how to use web development tools including HTML, CSS, and javascript.</p>
+            </footer>
             </div>
         </div>
     </body>

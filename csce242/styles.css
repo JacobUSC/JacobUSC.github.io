@@ -1,45 +1,66 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url(images/background.jpg);
+    background: blueviolet;
 }
 
 /* Structure */
 
-#boarder {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(1px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 5px;
+#content {
     width: 80%;
     margin: auto; /* center horizontally */
-    border-radius: 16px;
+    background: black;
 }
 
-#content {
-    background: white;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding-left: 15px;
+#main-header h1 {
+    text-align: center;
+}
+
+#main-header h3 {
+    text-align: left;
+}
+
+#main-content h2 {
+    text-align: center;
+}
+
+.assignment {
+    background: teal;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.assignment h3 {
+    text-align: center;
 }
 
 /* Navigation */
 
-#assignments a {
+.assignment a {
     text-decoration: none;
-    color: yellowgreen;
 }
 
-#assignments a:hover {
-    color: darkblue;
+.assignments a:hover {
+    background: blueviolet;
 }
 
 /* Typography */
 
-h1 {
-    color: black;
+h1,
+h2,
+h3,
+p {
+    color: white;
 }
 
-h2 {
-    color: darkblue;
+
+
+@media only screen and (min-width: 768px) {
+    .columns {
+        display: flex;
+    }
+
+    .one {
+        flex: 1;
+    }
 }
