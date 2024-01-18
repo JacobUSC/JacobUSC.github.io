@@ -11,16 +11,8 @@ body {
     background: black;
 }
 
-#main-header h1 {
-    text-align: center;
-}
-
-#main-header h3 {
-    text-align: left;
-}
-
-#main-content h2 {
-    text-align: center;
+#main-header {
+    border-bottom: 3px solid white;
 }
 
 .assignment {
@@ -30,8 +22,12 @@ body {
     padding: 5px;
 }
 
-.assignment h3 {
-    text-align: center;
+.assignment img {
+    max-width: 300px;
+    max-height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Navigation */
@@ -40,7 +36,7 @@ body {
     text-decoration: none;
 }
 
-.assignments a:hover {
+.assignment:hover {
     background: blueviolet;
 }
 
@@ -53,6 +49,29 @@ p {
     color: white;
 }
 
+#main-header h1 {
+    text-align: center;
+    margin-top: 0px;
+}
+
+#main-header h3 {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 15px;
+    margin-bottom: 0px;
+}
+
+#main-content h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.assignment h3 {
+    text-align: center;
+}
 
 
 @media only screen and (min-width: 768px) {
@@ -62,5 +81,10 @@ p {
 
     .one {
         flex: 1;
+    }
+
+    .assignment {
+        width: 80%;
+        height: 80%;
     }
 }
