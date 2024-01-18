@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: lightgray;
+}
+
+/* Structure */
+
+#content {
+    padding: 5px;
+    width: 80%;
+    margin: auto; /* center horizontally */
+}
+
+#links,
+#small-ideas {
+    background: lightgoldenrodyellow;
+    border: 1px solid ;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#titled-items {
+    background: teal;
+}
+
+/* Navigation */
+
+#main-nav li {
+    list-style-type: none;
+    background: salmon;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid teal;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+#nav-links li {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+#nav-links a {
+    color: salmon;
+}
+
+
+/* Typography */
+
+#main-header h1 {
+    color: teal;
+    text-align: center;
+}
+
+#links h3 {
+    color: teal;
+    padding-left: 15px;
+}
+
+#small-ideas h2,
+#small-ideas h3,
+#small-ideas p {
+    color: teal;
+    padding-left: 5px;
+}
+
+.item h3 {
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.item p {
+    color: white;
+    padding-left: 5px;
+}
+
+#main-footer p {
+    text-align: center;
+    color: teal;
+}
+
+/* larger Screens*/
+
+@media only screen and (min-width: 768px) {
+    .columns {
+        display: flex;
+    }
+
+    #links {
+        flex: 1;
+    }
+
+    #small-ideas {
+        flex: 3;
+    }
+
+    .idea {
+        display: flex;
+    }
+    
+    #small-ideas img {
+        padding: 5px;
+    }
+
+    .item {
+        padding: 20px;
+    }
+
+}
