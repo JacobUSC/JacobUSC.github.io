@@ -17,9 +17,13 @@ body {
 
 .assignment {
     background: teal;
-    margin: 15px;
     border-radius: 15px;
     padding: 5px;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .assignment img {
@@ -28,6 +32,10 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#assignments {
+    border-bottom: 3px solid white;
 }
 
 /* Navigation */
@@ -77,6 +85,7 @@ p {
 @media only screen and (min-width: 768px) {
     .columns {
         display: flex;
+        flex-wrap:wrap;
     }
 
     .one {
@@ -84,7 +93,7 @@ p {
     }
 
     .assignment {
-        width: 80%;
+        width: 30%;
         height: 80%;
     }
 }
