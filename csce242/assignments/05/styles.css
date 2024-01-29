@@ -26,6 +26,15 @@ body {
     flex-wrap:wrap;
 }
 
+.columns-low-res-pres {
+    display: flex;
+}
+
+.columns-low-res-wrap-pres {
+    display: flex;
+    flex-wrap:wrap;
+}
+
 header {
     width: 100%;
     height: 100%;
@@ -39,6 +48,10 @@ header {
     height: 100%;
     padding: 10px;
     margin: auto;
+}
+
+#home-title img {
+    object-fit: contain;
 }
 
 #header-bottom {
@@ -126,6 +139,7 @@ a {
 
 li {
     list-style-type: none;
+    padding-left: 10px;
 }
 
 /* Typography */
@@ -153,6 +167,18 @@ li {
 
 #side-nav a {
     color: var(--usc-black);
+    font-weight: bolder;
+
+}
+
+#side-nav li {
+    padding: 10px;
+    border-top: solid 1px var(--usc-dark-grey);
+    border-bottom: solid 1px var(--usc-dark-grey);
+}
+
+#side-nav p {
+    text-align: right;
 }
 
 #main-content h1 {
@@ -213,7 +239,63 @@ li {
 /* larger Screens*/
 
 @media only screen and (min-width: 768px) {
+    .columns-low-res,
+    .columns-low-res-wrap {
+        display: block;
+    }
+
     .columns {
         display: flex;
     }
+
+    .columns-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .one {
+        flex: 1;
+    }
+
+    .two {
+        flex: 2;
+    }
+
+    .three {
+        flex: 3;
+    }
+
+    div {
+        padding: 10px;
+    }
+
+    #home-title {
+        margin-left: 15%;
+    }
+
+    #header-nav {
+        padding-top: 0;
+        margin-left: 100%;
+    }
+
+    #header-bottom h2 {
+        margin-left: 15%
+    }
+
+    #search {
+        margin-left: 100%;
+    }
+
+    #main-content {
+        width: 75%;
+        margin: auto;
+    }
+
+    #main-content img {
+        width: auto;
+        height: auto;
+    }
+
+
+
 }
