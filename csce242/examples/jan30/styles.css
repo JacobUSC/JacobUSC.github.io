@@ -13,8 +13,23 @@ body {
     border-radius: 5px;
 }
 
+#car {
+    max-width: 20%;
+}
+
+.hidden {
+    display: none;
+}
+
 /* Typography */
 
 h1 {
     color: darkslategrey;
+}
+
+.special {
+    background: cyan;
+    size: 2em;
+    color: magenta;
+    border: 2px dotted magenta;
 }
