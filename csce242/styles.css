@@ -1,6 +1,17 @@
+:root {
+    --main-background-color: blueviolet;
+    --secondary-background-color: black;
+    --assignment-color: teal;
+    --text-color: white;
+    --border-color: white;
+    --highlight-color: blueviolet;
+    --secondary-highlight-color: cyan;
+
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: blueviolet;
+    background: var(--main-background-color);
 }
 
 /* Structure */
@@ -12,18 +23,17 @@ body {
 }
 
 #main-header {
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--border-color);
 }
 
 .assignment {
-    background: teal;
+    background: var(--assignment-color);
     border-radius: 15px;
     padding: 5px;
     width: 80%;
-    height: 80%;
     margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .assignment img {
@@ -35,7 +45,7 @@ body {
 }
 
 #assignments {
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--border-color);
 }
 
 /* Navigation */
@@ -45,7 +55,15 @@ body {
 }
 
 .assignment:hover {
-    background: blueviolet;
+    background: var(--highlight-color);
+}
+
+#wayback-link {
+    text-decoration: underline;
+}
+
+#wayback-link:hover {
+    color: var(--secondary-highlight-color);
 }
 
 /* Typography */
@@ -55,7 +73,7 @@ h2,
 h3,
 p,
 a {
-    color: white;
+    color: var(--text-color);
 }
 
 #main-header h1 {
@@ -95,6 +113,6 @@ p {
 
     .assignment {
         width: 30%;
-        height: 80%;
+        height: 300px;
     }
 }
