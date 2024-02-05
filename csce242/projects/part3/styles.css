@@ -40,7 +40,6 @@ main {
 
 #main-content {
     background: var(--main-background);
-    opacity: 0.7;
     border-radius: 25px;
     margin: 10px;
     padding: 5px;
@@ -113,10 +112,6 @@ footer {
     padding: 5px;
 }
 
-#page-nav {
-    
-}
-
 #account-nav {
     display: var(--account-buttons);
 }
@@ -165,68 +160,6 @@ footer {
     z-index: 1030;
 }
 
-/* Deck Builder */
-
-#deck {
-    flex: 2;
-    border: solid 1px var(--nav-text);
-    background: var(--main-background);
-    border-radius: 25px;
-    margin: 10px;
-    padding: 0;
-}
-
-#deck-header {
-    border-bottom: solid 1px var(--nav-text);
-    display: flex;
-    padding: 5px;
-    
-}
-
-#deck-area {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-}
-
-.deck-card {
-    width: 10%;
-    padding: 10px;
-}
-
-#fusion-deck {
-    border-top: solid 1px var(--nav-text);
-}
-
-#fusion-deck-area {
-    display: flex;
-    padding: 10px;
-}
-
-#card-pool {
-    flex: 1;
-    border: solid 1px var(--nav-text);
-    background: var(--main-background);
-    border-radius: 25px;
-    margin: 10px;
-    padding: 0;
-}
-
-#card-pool-header {
-    border-bottom: solid 1px var(--nav-text);
-    display: flex;
-    padding: 5px;
-}
-
-#card-area {
-    padding: 10px;
-}
-
-.card-pool-card {
-    width: 35%;
-    padding: 10px;
-}
-
 /* Typography */
 
 header h1 {
@@ -240,7 +173,6 @@ header h1 {
     text-decoration: none;
     font-size: 2em;
     text-align: center;
-    
 }
 
 #main-nav li {
@@ -282,6 +214,10 @@ footer p {
     /* Structure */
     main {
         display: flex;
+    }
+
+    #flex-override {
+        display: block;
     }
 
     /* Navigation */
