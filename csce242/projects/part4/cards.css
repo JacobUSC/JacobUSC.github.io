@@ -1,0 +1,25 @@
+:root {
+    --card-list-header: lightgrey;
+}
+
+/* Card List */
+#card-list-header {
+    background: var(--card-list-header);
+    border-radius: 25px;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#card-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-card {
+    width: 25%;
+    padding: 10px;
+    margin: auto;
+}
