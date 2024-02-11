@@ -2,13 +2,22 @@
 <html>
     <head>
         <!-- Jacob Russell CSCE 242-001 -->
-        <title>Title</title>
+        <title>Assignment 8 - Conditionals</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header>
             <h1>Assignment 8</h1>
             <h2>If Statements</h2>
+            <nav>
+                <button id="menu-button"><p id="button-text">&#9660</p></button>
+                <div id="nav-space">
+                    <ul id="nav-list" class="hide">
+                        <li><button id="command-button">Exercise 1</button></li>
+                        <li><button id="yoga-button">Exercise 2</button></li>
+                    </ul>
+                </div>
+            </nav>
         </header>
         <main>
             <div id="command" class="content">
@@ -20,10 +29,25 @@
                     <li><p>r: Walk in the rain</p></li>
                     <li><p>s: Shovel up some dirt</p></li>
                     <li><p>w: Go to work</p></li>
-                    <p></p>
                 </ul>
+                <p id="command-align">
+                    <input type="text" id="command-box">
+                </p>
+                <img src="images/original.jpg" id="command-img">
+                <p>
+                    Image by
+                    <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20856908.htm#query=stick%20figure&position=1&from_view=keyword&track=ais&uuid=12d17ea3-cffc-4386-9be4-ff9dc4b5edc2">Freepik</a>
+                </p>
             </div>
-            <div id="yoga" class="content"></div>
+            <div id="yoga" class="content hide">
+                <h3>Yoga Slide</h3>
+                <img src="images/yoga1.jpg" id="yoga-img">
+                <input type="range" min="1" max="8" value="1" id="yoga-slider">
+                <p>
+                    Image by
+                    <a href="https://www.freepik.com/free-vector/hand-drawn-stickman-collection_20832062.htm#query=stick%20figure%20run&position=46&from_view=search&track=ais&uuid=22e87991-ee06-4dc2-8ea3-464d535e1a63">Freepik</a>
+                </p>
+            </div>
         </main>
         <footer>
             <p><a href="../../index.html">Back To Main Site</a></p>
