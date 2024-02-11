@@ -13,6 +13,7 @@
     --footer-text: white;
     --menu: none;
     --account-buttons: block;
+    --show-overlay: none;
     --show-signup: none;
     --show-login: none;
 }
@@ -35,7 +36,11 @@ header {
 
 main {
     background: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 10px;
+    min-height: 900px;
+    max-height: max-content;
 }
 
 #main-content {
@@ -134,7 +139,8 @@ footer {
     display: var(--show-login);
 }
 
-.transparent-overlay {
+#transparent-overlay {
+    display: var(--show-overlay);
     background: var(--nav-background);
     opacity: 0.5;
     width: 100%;
@@ -144,12 +150,12 @@ footer {
     bottom: 0;
     left: 0;
     transition: opacity .25s ease;
-    z-index: 1030;
+    z-index: 1029;
 }
 
 .fields {
     background: var(--signup-login-background);
-    opacity: 10;
+    opacity: none;
     width: 70%;
     height: 70%;
     position: fixed;
@@ -229,5 +235,9 @@ footer p {
     /* Images */
     #body-image {
         display: block;
+        max-width: max-content;
+        max-height: max-content;
+        width: 100%;
+        height: auto;
     }
 }
