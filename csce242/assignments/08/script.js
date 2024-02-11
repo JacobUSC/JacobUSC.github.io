@@ -13,10 +13,14 @@ const menuDisplay = () => {
 }
 
 const commandDisplay = () => {
-    if (!document.getElementById("yoga").classList.contains("hide")) {
-        document.getElementById("yoga").classList.toggle("hide");
+    const yoga = document.getElementById("yoga");
+    const command = document.getElementById("command");
+    if (!yoga.classList.contains("hide")) {
+        yoga.classList.toggle("hide");
     }
-    document.getElementById("command").classList.toggle("hide");
+    if (command.classList.contains("hide")) {
+        command.classList.toggle("hide");
+    }
 };
 
 const commandRun = () => {
@@ -38,10 +42,14 @@ const commandRun = () => {
 };
 
 const yogaDisplay = () => {
-    if (!document.getElementById("command").classList.contains("hide")) {
-        document.getElementById("command").classList.toggle("hide");
+    const yoga = document.getElementById("yoga");
+    const command = document.getElementById("command");
+    if (!command.classList.contains("hide")) {
+        command.classList.toggle("hide");
     }
-    document.getElementById("yoga").classList.toggle("hide");
+    if (yoga.classList.contains("hide")) {
+        yoga.classList.toggle("hide");
+    }
 };
 
 const yogaPose = () => {
