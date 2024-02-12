@@ -1,11 +1,6 @@
-:root {
-    --header-list-background: lightgrey;
-    --deck-list-background: grey;
-}
-
 /* Deck List */
 #list-header {
-    background: var(--header-list-background);
+    background: var(--yami-color2);
     display: flex;
     padding: 10px;
     flex-direction: row;
@@ -15,7 +10,7 @@
 }
 
 .deck-list {
-    background: var(--deck-list-background);
+    background: var(--yami-color2);
     width: 75%;
     margin: auto;
 }

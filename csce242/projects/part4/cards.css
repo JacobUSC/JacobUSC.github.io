@@ -1,10 +1,6 @@
-:root {
-    --card-list-header: lightgrey;
-}
-
 /* Card List */
 #card-list-header {
-    background: var(--card-list-header);
+    background: var(--yami-color2);
     border-radius: 25px;
     display: flex;
     padding: 10px;
