@@ -1,0 +1,43 @@
+:root {
+    --color1: lightgrey;
+    --color2: darkgreen;
+    --color3: darkolivegreen;
+    --color4: khaki;
+    --color5: white;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color1);
+}
+
+/* Typography */
+
+h1 {
+    text-align: center;
+    color: var(--color2);
+}
+
+h2 {
+    text-align: center;
+    color: var(--color3);
+}
+
+h3 {
+    text-align: center;
+    color: var(--color2);
+}
+
+p {
+    color: var(--color2);
+}
+
+footer p {
+    text-align: center;
+}
+
+/* larger Screens*/
+
+@media only screen and (min-width: 768px) {
+
+}
