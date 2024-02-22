@@ -15,8 +15,10 @@ const displayImages = () => {
         const attrA = document.createElement("a");
         attrA.href = imageList[image][0];
         attrA.innerHTML = imageList[image][1];
-        attrP.innerHTML = `${attrA} on Freepik`;
+        attrP.append(attrA, " on Freepik");
         imagesDiv.append(img);
         imagesDiv.append(attrP);
     }
 };
+
+displayImages();
