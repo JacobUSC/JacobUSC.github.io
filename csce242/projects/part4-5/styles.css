@@ -1,0 +1,248 @@
+:root {
+    --yami-color1: black;
+    --yami-color2: rgba(128, 128, 128, 0.3);
+    --yami-color3: white;
+    --yami-color3-transparent: rgba(255, 255, 255, 0.5);
+    --yami-color4: #e51b0b;
+    --yami-color5: #fff858;
+
+    /* Display Elements Variables */
+    --menu: none;
+    --account-buttons: block;
+    --show-overlay: none;
+    --show-signup: none;
+    --show-login: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--yami-color1);
+    margin: 0%;
+}
+
+/* Structure */
+
+header {
+    background: var(--yami-color1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    background: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    min-height: 900px;
+    max-height: max-content;
+}
+
+#main-content {
+    background: var(--yami-color3-transparent);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 5px;
+}
+
+footer {
+    background: var(--yami-color1);
+    padding: 10px;
+}
+
+/* Images */
+
+#main-logo {
+    width: 150px;
+    height: 50px;
+    display: block;
+    margin: auto;
+    margin-left: 10px;
+}
+
+#body-image {
+    display: none;
+}
+
+/* Navigation */
+
+#nav-button {
+    background: var(--yami-color1);
+    color: var(--yami-color3);
+    width: 150px;
+    height: 50px;
+    margin-right: 10px;
+    border: 1px solid var(--yami-color4);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#nav-button:hover  {
+    background: var(--yami-color5);
+}
+
+#main-nav {
+    display: var(--menu);
+    background: var(--yami-color1);
+    opacity: 10;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .25s ease;
+    z-index: 1030;
+}
+
+#close-nav-button {
+    background: var(--yami-color3);
+    color: var(--yami-color3);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+#close-nav-button:hover {
+    background: var(--yami-color4);
+}
+
+#close-nav-button img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: auto;
+}
+
+#main-nav ul {
+    margin: auto;
+    padding: 5px;
+}
+
+#account-nav {
+    display: var(--account-buttons);
+}
+
+#account-nav button {
+    color: var(--yami-color3);
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 2em;
+}
+
+/* Signup and Login*/
+
+#signup-menu {
+    display: var(--show-signup);
+}
+
+#login-menu {
+    display: var(--show-login);
+}
+
+#transparent-overlay {
+    display: var(--show-overlay);
+    background: var(--yami-color3);
+    opacity: 0.5;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .25s ease;
+    z-index: 1029;
+}
+
+.fields {
+    background: var(--yami-color3);
+    opacity: none;
+    width: 70%;
+    height: 70%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+/* Typography */
+
+header h1 {
+    color: var(--yami-color3);
+    text-align: center;
+    margin-top: 25px;
+}
+
+#main-nav a {
+    color: var(--yami-color3);
+    text-decoration: none;
+    font-size: 2em;
+    text-align: center;
+}
+
+#main-nav li {
+    background: var(--yami-color1);
+    border: 1px solid var(--yami-color4);
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+}
+
+#main-nav ul {
+    list-style-type: none;
+}
+
+#main-nav li:hover {
+    background: var(--yami-color5);
+}
+
+main h2 {
+    color: var(--yami-color1);
+    text-align: center;
+}
+
+main p {
+    color: var(--yami-color1);
+    padding-left: 15px;
+    padding-right: 15px;;
+    padding-bottom: 5px;
+}
+
+footer p {
+    color: var(--yami-color3);
+    padding-left: 10px;
+}
+
+/* larger Screens*/
+
+@media only screen and (min-width: 768px) {
+    /* Structure */
+    main {
+        display: flex;
+    }
+
+    #flex-override {
+        display: block;
+    }
+
+    /* Navigation */
+    #main-nav {
+        width: 15%;
+        left: 85%;
+    }
+
+    /* Images */
+    #body-image {
+        display: block;
+        max-width: max-content;
+        max-height: max-content;
+        width: 100%;
+        height: auto;
+    }
+}
