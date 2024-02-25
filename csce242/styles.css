@@ -58,11 +58,12 @@ body {
     background: var(--highlight-color);
 }
 
-#wayback-link {
+.link {
     text-decoration: underline;
+    color: black;
 }
 
-#wayback-link:hover {
+.link:hover {
     color: var(--secondary-highlight-color);
 }
 
