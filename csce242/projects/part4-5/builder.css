@@ -1,4 +1,8 @@
 /* Deck Builder */
+:root {
+    --pool-height: 600px;
+}
+
 #deck {
     flex: 2;
     background: var(--yami-color3-transparent);
@@ -9,7 +13,7 @@
 
 #deck-header {
     display: flex;
-    background: var(--yami-color2);
+    background: var(--yami-color2-transparent);
     padding: 10px;
     flex-direction: row;
     align-items: center;
@@ -33,9 +37,10 @@
 }
 
 #fusion-deck h3 {
-    background: var(--yami-color2);
+    background: var(--yami-color2-transparent);
     color: var(--yami-color1);
-    padding: 10px;
+    padding: 20px;
+    padding-left: 10px;
     border-radius: 25px;
 }
 
@@ -53,7 +58,7 @@
 }
 
 #card-pool-header {
-    background: var(--yami-color2);
+    background: var(--yami-color2-transparent);
     border-radius: 25px;
     display: flex;
     padding: 10px;
@@ -63,10 +68,23 @@
 }
 
 #card-area {
+    display: flex;
     padding: 10px;
+    overflow: scroll;
 }
 
 .card-pool-card {
-    width: 35%;
+    width: 120px;
     padding: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+    #card-area {
+        display: block;
+        height: var(--pool-height);
+    }
+
+    .card-pool-card {
+        width: 200px;
+    }
 }
