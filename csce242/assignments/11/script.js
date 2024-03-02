@@ -23,48 +23,94 @@ class Card {
         image.classList.add("image-small");
         section.append(image);
         
-        section.onclick = this.expand;
+        section.onclick = this.showHide.bind(this);
         section.classList.add("content");
         
         return section;
     };
 
     get modalSection() {
-        console.log("test");
         const section = document.createElement("section");
-
-        const h3Title = document.createElement("h3");
-        h3.innerHTML = this.title;
-        section.append(h3Title);
-
-        const pType = document.createElement("p");
-        pType.innerHTML = `Type: ${this.type}`;
-        section.append(pType);
-
+        section.classList.add("modal-section");
+        section.classList.add(this.file);
+        section.classList.add("hidden");
 
         const buttonClose = document.createElement("button");
         buttonClose.innerHTML = "X";
-        buttonClose.onclick = this.close;
+        buttonClose.onclick = this.showHide.bind(this);
         section.append(buttonClose);
+
+        const columns = document.createElement("section");
+        columns.classList.add("columns")
+
+        const textColumn = document.createElement("section");
+        textColumn.classList.add("textColumn");
+        
+        const h3Title = document.createElement("h3");
+        h3Title.innerHTML = this.title;
+        textColumn.append(h3Title);
+
+        const pType = document.createElement("p");
+        pType.innerHTML = `<strong>Type:</strong> ${this.type}`;
+        textColumn.append(pType);
+
+        const pEffect = document.createElement("p");
+        pEffect.innerHTML = `<strong>Effect:</strong> ${this.effect}`;
+        textColumn.append(pEffect);
+
+        const pRank = document.createElement("p");
+        pRank.innerHTML = `<strong>Rank:</strong> ${this.rank}`;
+        textColumn.append(pRank);
+
+        const pAttr = document.createElement("p");
+        pAttr.innerHTML = `<strong>Attribute:</strong> ${this.attribute}`;
+        textColumn.append(pAttr);
+
+        const pATK = document.createElement("p");
+        pATK.innerHTML = `<strong>Attack:</strong> ${this.attack}`;
+        textColumn.append(pATK);
+
+        const pDEF = document.createElement("p");
+        pDEF.innerHTML = `<strong>Defense:</strong> ${this.defense}`;
+        textColumn.append(pDEF);
+
+        const pDESC = document.createElement("p");
+        pDESC.innerHTML = `<strong>Description:</strong> ${this.description}`;
+        textColumn.append(pDESC);
+
+        const imageColumn = document.createElement("section");
+        imageColumn.classList.add("imageColumn")
 
         const image = document.createElement("img");
         image.src = `images/${this.file}`;
         image.classList.add("image");
-        section.append(image);
+        imageColumn.append(image);
+
+        columns.append(textColumn);
+        columns.append(imageColumn);
+        section.append(columns);
+
 
         return section;
     };
 
-    expand() {
-        document.getElementById("card-modal").append(this.modalSection);
-        document.getElementById("transparent").classList.remove("hidden");
-        document.getElementById("card-modal").classList.remove("hidden");
-    };
-
-    close() {
-        document.getElementById("transparent").classList.add("hidden");
-        document.getElementById("card-modal").classList.remove("hidden");
-        document.getElementById("card-modal").innerHTML = "";
+    //
+    showHide() {
+        const modals = document.getElementsByClassName("modal-section");
+        for (let i = 0; i < modals.length; i++) {
+            if (modals.item(i).classList.contains(this.file)) {
+                if (modals.item(i).classList.contains("hidden")) {
+                    modals.item(i).classList.remove("hidden");
+                    document.getElementById("transparent").classList.remove("hidden");
+                    document.getElementById("card-modal").classList.remove("hidden");
+                } else {
+                    modals.item(i).classList.add("hidden");
+                    document.getElementById("transparent").classList.add("hidden");
+                    document.getElementById("card-modal").classList.add("hidden");
+                }
+                return;
+            };
+        };
     };
 };
 
@@ -76,4 +122,5 @@ cards.push(new Card("blue-eyes-ultimate-dragon.jpg", "Blue-Eyes Ultimate Dragon"
 
 cards.forEach((card) => {
     document.getElementById("card-list").append(card.section);
+    document.getElementById("card-modal").append(card.modalSection);
 });

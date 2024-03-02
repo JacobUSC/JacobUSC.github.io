@@ -32,7 +32,8 @@ main {
     padding-top: 10px;
     width: auto;
     height: auto;
-    max-width: 100%;
+    max-height: 50%;
+    max-width: 50%;
 }
 
 .image-small {
@@ -57,7 +58,7 @@ main {
     z-index: 1029;
 }
 
-#card-modal {
+.modal-section {
     background: var(--color4);
     width: 80%;
     height: 80%;
@@ -71,6 +72,11 @@ main {
 .hidden {
     display: none;
 }
+
+button {
+    margin-left: 100%;
+}
+
 
 /* Typography */
 
@@ -91,6 +97,10 @@ h3 {
 
 p {
     color: var(--color2);
+    padding-left: 15px;
+}
+
+footer p {
     text-align: center;
 }
 
@@ -114,10 +124,31 @@ a {
         margin-right: 30px;
     }
 
-    #card-modal {
+    
+
+    .modal-section {
         width: 50%;
         height: 50%;
         margin-left: 25%;
         margin-top: 5%;
+    }
+
+    .columns {
+        display: flex;
+    }
+
+    .image {
+        max-height: 40%;
+        max-width: none;
+        margin-right: 10%;
+        padding: none;
+    }
+
+    .textColumn {
+        width: 75%;
+    }
+
+    .imageColumn {
+        width: 50%;
     }
 }
