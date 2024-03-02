@@ -11,25 +11,60 @@ class Card {
         this.description = description;
     };
 
-    getSection() {
+    get section() {
         const section = document.createElement("section");
+        
         const h3 = document.createElement("h3");
-        h3.innerHTML(this.title);
+        h3.innerHTML = this.title;
+        section.append(h3);
+
         const image = document.createElement("img");
-        image.src = `images/${file}`;
-        section.append(h3,image);
+        image.src = `images/${this.file}`;
+        image.classList.add("image-small");
+        section.append(image);
+        
+        section.onclick = this.expand;
+        section.classList.add("content");
+        
         return section;
     };
 
-    getExpandedSection() {
+    get modalSection() {
+        console.log("test");
         const section = document.createElement("section");
 
-        section.append();
+        const h3Title = document.createElement("h3");
+        h3.innerHTML = this.title;
+        section.append(h3Title);
+
+        const pType = document.createElement("p");
+        pType.innerHTML = `Type: ${this.type}`;
+        section.append(pType);
+
+
+        const buttonClose = document.createElement("button");
+        buttonClose.innerHTML = "X";
+        buttonClose.onclick = this.close;
+        section.append(buttonClose);
+
+        const image = document.createElement("img");
+        image.src = `images/${this.file}`;
+        image.classList.add("image");
+        section.append(image);
+
         return section;
     };
 
-    expandOrClose(e) {
-        //todo
+    expand() {
+        document.getElementById("card-modal").append(this.modalSection);
+        document.getElementById("transparent").classList.remove("hidden");
+        document.getElementById("card-modal").classList.remove("hidden");
+    };
+
+    close() {
+        document.getElementById("transparent").classList.add("hidden");
+        document.getElementById("card-modal").classList.remove("hidden");
+        document.getElementById("card-modal").innerHTML = "";
     };
 };
 
@@ -40,6 +75,5 @@ cards.push(new Card("blue-eyes-white-dragon.jpg", "Blue-Eyes White Dragon", "Dra
 cards.push(new Card("blue-eyes-ultimate-dragon.jpg", "Blue-Eyes Ultimate Dragon", "Dragon", "Fusion", 12, "Light", 4500, 3800, "\"Blue-Eyes White Dragon\" + \"Blue-Eyes White Dragon\" + \"Blue-Eyes White Dragon\""));
 
 cards.forEach((card) => {
-    document.getElementById("card-list").append(card.getSection());
-    document.getElementById("main").append(card.getExpandedSection());
+    document.getElementById("card-list").append(card.section);
 });
