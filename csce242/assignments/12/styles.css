@@ -93,9 +93,11 @@ a {
 
     .levels {
         display: flex;
+        margin: auto;
     }
 
     .level {
-        margin: 20px;
+        padding: 20px;
+        margin: auto;
     }
 }
