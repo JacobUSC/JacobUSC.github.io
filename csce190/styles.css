@@ -1,47 +1,47 @@
-body{
-    background: aqua;
-    font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', sans-serif;
+body {
+	background: aqua;
+	font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", sans-serif;
 }
 h1 {
-    color: deeppink;
-    text-align: center;
+	color: deeppink;
+	text-align: center;
 }
 h2 {
-    color:  aqua;
+	color: aqua;
 }
 h2:hover {
-    color: lawngreen;
+	color: lawngreen;
 }
 p {
-    color: aqua;
+	color: aqua;
 }
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 a:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 .assign {
-    display: flex;
-    flex-wrap:wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 .assign-det {
-    width:21%;
-    padding: 10px;
-    margin: 10px;
-    margin-bottom: 30px;
-    background: deeppink;
-    border-radius: 15px;
-    box-shadow: 5px 8px #401201;
+	width: 21%;
+	padding: 10px;
+	margin: 10px;
+	margin-bottom: 30px;
+	background: deeppink;
+	border-radius: 15px;
+	box-shadow: 5px 8px #401201;
 }
 .assign img {
-    width: 200px;
-    border: 2px solid cyan;
-    margin-right:20px;
-    border-radius: 15px;
-    display:block;
-    margin:auto;
+	width: 200px;
+	border: 2px solid cyan;
+	margin-right: 20px;
+	border-radius: 15px;
+	display: block;
+	margin: auto;
 }
 .assign img:hover {
-    border: 2px solid lawngreen;
+	border: 2px solid lawngreen;
 }

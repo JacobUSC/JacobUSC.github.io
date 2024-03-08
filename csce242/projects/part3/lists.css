@@ -1,50 +1,50 @@
 :root {
-    --header-list-background: lightgrey;
-    --deck-list-background: grey;
+	--header-list-background: lightgrey;
+	--deck-list-background: grey;
 }
 
 /* Deck List */
 #list-header {
-    background: var(--header-list-background);
-    display: flex;
-    padding: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 25px;
+	background: var(--header-list-background);
+	display: flex;
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 25px;
 }
 
 .deck-list {
-    background: var(--deck-list-background);
-    width: 75%;
-    margin: auto;
+	background: var(--deck-list-background);
+	width: 75%;
+	margin: auto;
 }
 
 .deck-list h3,
 .deck-list h4 {
-    text-align: center;
+	text-align: center;
 }
 
 .deck-list-card {
-    display: block;
-    margin: auto;
-    width: 25%;
+	display: block;
+	margin: auto;
+	width: 25%;
 }
 
 /* larger Screens*/
 
 @media only screen and (min-width: 768px) {
-    #list-area {
-        display: flex;
-    }
+	#list-area {
+		display: flex;
+	}
 
-    .deck-list {
-        width: 25%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
+	.deck-list {
+		width: 25%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
 
-    .deck-list-card {
-        width: 50%
-    }
+	.deck-list-card {
+		width: 50%;
+	}
 }

@@ -1,74 +1,74 @@
 :root {
-    --builder-header-background: lightgrey;
+	--builder-header-background: lightgrey;
 }
 
 /* Deck Builder */
 #deck {
-    flex: 2;
-    background: var(--main-background);
-    border-radius: 25px;
-    margin: 10px;
-    padding: 0;
+	flex: 2;
+	background: var(--main-background);
+	border-radius: 25px;
+	margin: 10px;
+	padding: 0;
 }
 
 #deck-header {
-    display: flex;
-    background: var(--builder-header-background);
-    padding: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 25px;
+	display: flex;
+	background: var(--builder-header-background);
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 25px;
 }
 
 #deck-area {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
 }
 
 .deck-card {
-    width: 10%;
-    padding: 10px;
+	width: 10%;
+	padding: 10px;
 }
 
 #fusion-deck {
-    border-top: solid 1px var(--builder-header-background);
+	border-top: solid 1px var(--builder-header-background);
 }
 
 #fusion-deck h3 {
-    background: var(--builder-header-background);
-    border-radius: 25px;
+	background: var(--builder-header-background);
+	border-radius: 25px;
 }
 
 #fusion-deck-area {
-    display: flex;
-    padding: 10px;
+	display: flex;
+	padding: 10px;
 }
 
 #card-pool {
-    flex: 1;
-    background: var(--main-background);
-    border-radius: 25px;
-    margin: 10px;
-    padding: 0;
+	flex: 1;
+	background: var(--main-background);
+	border-radius: 25px;
+	margin: 10px;
+	padding: 0;
 }
 
 #card-pool-header {
-    background: var(--builder-header-background);
-    border-radius: 25px;
-    display: flex;
-    padding: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+	background: var(--builder-header-background);
+	border-radius: 25px;
+	display: flex;
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 }
 
 #card-area {
-    padding: 10px;
+	padding: 10px;
 }
 
 .card-pool-card {
-    width: 35%;
-    padding: 10px;
+	width: 35%;
+	padding: 10px;
 }

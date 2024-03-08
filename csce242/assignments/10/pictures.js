@@ -6,19 +6,19 @@ imageList["small-house.jpg"] = ["https://www.freepik.com/free-photo/small-houses
 imageList["snow.jpg"] = ["https://www.freepik.com/free-photo/beautiful-scenery-lot-leafless-trees-snow-covered-land-during-sunset_10990489.htm#query=landscape&position=38&from_view=keyword&track=sph&uuid=16f8afcf-90c6-4cae-8249-a03fef90c6f4", "Image by wirestock"];
 
 const displayImages = () => {
-    const imagesDiv = document.getElementById("images");
-    for (let image in imageList) {
-        const img = document.createElement("img");
-        img.src = `images/${image}`;
-        img.classList.add("image");
-        const attrP = document.createElement("p");
-        const attrA = document.createElement("a");
-        attrA.href = imageList[image][0];
-        attrA.innerHTML = imageList[image][1];
-        attrP.append(attrA, " on Freepik");
-        imagesDiv.append(img);
-        imagesDiv.append(attrP);
-    }
+	const imagesDiv = document.getElementById("images");
+	for (let image in imageList) {
+		const img = document.createElement("img");
+		img.src = `images/${image}`;
+		img.classList.add("image");
+		const attrP = document.createElement("p");
+		const attrA = document.createElement("a");
+		attrA.href = imageList[image][0];
+		attrA.innerHTML = imageList[image][1];
+		attrP.append(attrA, " on Freepik");
+		imagesDiv.append(img);
+		imagesDiv.append(attrP);
+	}
 };
 
 displayImages();

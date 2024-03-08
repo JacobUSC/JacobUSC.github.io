@@ -1,154 +1,151 @@
 :root {
-    --color1: lightgrey;
-    --color2: darkgreen;
-    --color3: darkolivegreen;
-    --color4: khaki;
-    --color5: white;
+	--color1: lightgrey;
+	--color2: darkgreen;
+	--color3: darkolivegreen;
+	--color4: khaki;
+	--color5: white;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--color1);
+	font-family: Arial, Helvetica, sans-serif;
+	background: var(--color1);
 }
 
 /* Structure */
 
 main {
-    margin: auto;
+	margin: auto;
 }
 
-.content{
-    background: var(--color4);
-    border: 2px solid var(--color2);
-    border-radius: 5%;
-    margin: auto;
-    margin-bottom: 10px;
-    width: 300px;
+.content {
+	background: var(--color4);
+	border: 2px solid var(--color2);
+	border-radius: 5%;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 300px;
 }
 
 .image {
-    display: block;
-    margin: auto;
-    padding-top: 10px;
-    width: auto;
-    height: auto;
-    max-height: 50%;
-    max-width: 50%;
+	display: block;
+	margin: auto;
+	padding-top: 10px;
+	width: auto;
+	height: auto;
+	max-height: 50%;
+	max-width: 50%;
 }
 
 .image-small {
-    display: block;
-    margin: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: auto;
-    height: auto;
-    max-width: 75%;
+	display: block;
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: auto;
+	height: auto;
+	max-width: 75%;
 }
 
 #transparent {
-    background: rgba(0,0,0,0.5);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: opacity .25s ease;
-    z-index: 1029;
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: opacity 0.25s ease;
+	z-index: 1029;
 }
 
 .modal-section {
-    background: var(--color4);
-    width: 80%;
-    height: 80%;
-    position: fixed;
-    margin-left: 10%;
-    margin-top: 5%;
-    transition: opacity .25s ease;
-    z-index: 1030;
+	background: var(--color4);
+	width: 80%;
+	height: 80%;
+	position: fixed;
+	margin-left: 10%;
+	margin-top: 5%;
+	transition: opacity 0.25s ease;
+	z-index: 1030;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 button {
-    margin-left: 100%;
+	margin-left: 100%;
 }
-
 
 /* Typography */
 
 h1 {
-    color: var(--color2);
-    text-align: center;
+	color: var(--color2);
+	text-align: center;
 }
 
 h2 {
-    color: var(--color3);
-    text-align: center;
+	color: var(--color3);
+	text-align: center;
 }
 
 h3 {
-    color: var(--color2);
-    text-align: center;
+	color: var(--color2);
+	text-align: center;
 }
 
 p {
-    color: var(--color2);
-    padding-left: 15px;
+	color: var(--color2);
+	padding-left: 15px;
 }
 
 footer p {
-    text-align: center;
+	text-align: center;
 }
 
 a {
-    color: var(--color2);
+	color: var(--color2);
 }
 
 /* larger Screens*/
 
 @media only screen and (min-width: 1000px) {
-    main {
-        width: 70%;
-    }
+	main {
+		width: 70%;
+	}
 
-    #card-list {
-        display: flex;
-    }
+	#card-list {
+		display: flex;
+	}
 
-    .content {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
+	.content {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
 
-    
+	.modal-section {
+		width: 50%;
+		height: 50%;
+		margin-left: 25%;
+		margin-top: 5%;
+	}
 
-    .modal-section {
-        width: 50%;
-        height: 50%;
-        margin-left: 25%;
-        margin-top: 5%;
-    }
+	.columns {
+		display: flex;
+	}
 
-    .columns {
-        display: flex;
-    }
+	.image {
+		max-height: 40%;
+		max-width: none;
+		margin-right: 10%;
+		padding: none;
+	}
 
-    .image {
-        max-height: 40%;
-        max-width: none;
-        margin-right: 10%;
-        padding: none;
-    }
+	.textColumn {
+		width: 75%;
+	}
 
-    .textColumn {
-        width: 75%;
-    }
-
-    .imageColumn {
-        width: 50%;
-    }
+	.imageColumn {
+		width: 50%;
+	}
 }

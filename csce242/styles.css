@@ -1,70 +1,69 @@
 :root {
-    --main-background-color: blueviolet;
-    --secondary-background-color: black;
-    --assignment-color: teal;
-    --text-color: white;
-    --border-color: white;
-    --highlight-color: blueviolet;
-    --secondary-highlight-color: cyan;
-
+	--main-background-color: blueviolet;
+	--secondary-background-color: black;
+	--assignment-color: teal;
+	--text-color: white;
+	--border-color: white;
+	--highlight-color: blueviolet;
+	--secondary-highlight-color: cyan;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--main-background-color);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: var(--main-background-color);
 }
 
 /* Structure */
 
 #content {
-    width: 80%;
-    margin: auto; /* center horizontally */
-    background: black;
+	width: 80%;
+	margin: auto; /* center horizontally */
+	background: black;
 }
 
 #main-header {
-    border-bottom: 3px solid var(--border-color);
+	border-bottom: 3px solid var(--border-color);
 }
 
 .assignment {
-    background: var(--assignment-color);
-    border-radius: 15px;
-    padding: 5px;
-    width: 80%;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+	background: var(--assignment-color);
+	border-radius: 15px;
+	padding: 5px;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .assignment img {
-    max-width: 300px;
-    max-height: 150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	max-width: 300px;
+	max-height: 150px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #assignments {
-    border-bottom: 3px solid var(--border-color);
+	border-bottom: 3px solid var(--border-color);
 }
 
 /* Navigation */
 
 .assignment a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .assignment:hover {
-    background: var(--highlight-color);
+	background: var(--highlight-color);
 }
 
 .link {
-    text-decoration: underline;
-    color: black;
+	text-decoration: underline;
+	color: black;
 }
 
 .link:hover {
-    color: var(--secondary-highlight-color);
+	color: var(--secondary-highlight-color);
 }
 
 /* Typography */
@@ -74,48 +73,47 @@ h2,
 h3,
 p,
 a {
-    color: var(--text-color);
+	color: var(--text-color);
 }
 
 #main-header h1 {
-    text-align: center;
-    margin-top: 0px;
+	text-align: center;
+	margin-top: 0px;
 }
 
 #main-header h3 {
-    text-align: left;
-    padding-left: 20px;
-    padding-top: 15px;
-    margin-bottom: 0px;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 15px;
+	margin-bottom: 0px;
 }
 
 #main-content h2 {
-    text-align: center;
+	text-align: center;
 }
 
 p {
-    text-align: center;
+	text-align: center;
 }
 
 .assignment h3 {
-    text-align: center;
+	text-align: center;
 }
 
-
 @media only screen and (min-width: 768px) {
-    .columns {
-        display: flex;
-        flex-wrap:wrap;
-    }
+	.columns {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-    .one {
-        flex: 1;
-    }
+	.one {
+		flex: 1;
+	}
 
-    .assignment {
-        min-height: 300px;
-        max-height: 600px;
-        height: fit-content;
-        max-width: 400px;
-    }
+	.assignment {
+		min-height: 300px;
+		max-height: 600px;
+		height: fit-content;
+		max-width: 400px;
+	}
 }

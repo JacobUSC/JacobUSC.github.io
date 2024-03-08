@@ -1,90 +1,90 @@
 /* Deck Builder */
 :root {
-    --pool-height: 600px;
+	--pool-height: 600px;
 }
 
 #deck {
-    flex: 2;
-    background: var(--yami-color3-transparent);
-    border-radius: 25px;
-    margin: 10px;
-    padding: 0;
+	flex: 2;
+	background: var(--yami-color3-transparent);
+	border-radius: 25px;
+	margin: 10px;
+	padding: 0;
 }
 
 #deck-header {
-    display: flex;
-    background: var(--yami-color2-transparent);
-    padding: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 25px;
+	display: flex;
+	background: var(--yami-color2-transparent);
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 25px;
 }
 
 #deck-area {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
 }
 
 .deck-card {
-    width: 10%;
-    padding: 10px;
+	width: 10%;
+	padding: 10px;
 }
 
 #fusion-deck {
-    border-top: solid 1px var(--yami-color2);
+	border-top: solid 1px var(--yami-color2);
 }
 
 #fusion-deck h3 {
-    background: var(--yami-color2-transparent);
-    color: var(--yami-color1);
-    padding: 20px;
-    padding-left: 10px;
-    border-radius: 25px;
+	background: var(--yami-color2-transparent);
+	color: var(--yami-color1);
+	padding: 20px;
+	padding-left: 10px;
+	border-radius: 25px;
 }
 
 #fusion-deck-area {
-    display: flex;
-    padding: 10px;
+	display: flex;
+	padding: 10px;
 }
 
 #card-pool {
-    flex: 1;
-    background: var(--yami-color3-transparent);
-    border-radius: 25px;
-    margin: 10px;
-    padding: 0;
+	flex: 1;
+	background: var(--yami-color3-transparent);
+	border-radius: 25px;
+	margin: 10px;
+	padding: 0;
 }
 
 #card-pool-header {
-    background: var(--yami-color2-transparent);
-    border-radius: 25px;
-    display: flex;
-    padding: 10px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+	background: var(--yami-color2-transparent);
+	border-radius: 25px;
+	display: flex;
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 }
 
 #card-area {
-    display: flex;
-    padding: 10px;
-    overflow: scroll;
+	display: flex;
+	padding: 10px;
+	overflow: scroll;
 }
 
 .card-pool-card {
-    width: 120px;
-    padding: 10px;
+	width: 120px;
+	padding: 10px;
 }
 
 @media only screen and (min-width: 1000px) {
-    #card-area {
-        display: block;
-        height: var(--pool-height);
-    }
+	#card-area {
+		display: block;
+		height: var(--pool-height);
+	}
 
-    .card-pool-card {
-        width: 200px;
-    }
+	.card-pool-card {
+		width: 200px;
+	}
 }

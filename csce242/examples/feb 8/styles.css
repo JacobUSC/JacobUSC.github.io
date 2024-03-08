@@ -1,63 +1,61 @@
 :root {
-    --funds: 0%;
+	--funds: 0%;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: lightgray;
+	font-family: Arial, Helvetica, sans-serif;
+	background: lightgray;
 }
 
 /* Structure */
 
 #content {
-  background: #fff;
-  padding: 5px;
-  width: 80%;
-  /* center horizontally */
-  margin: auto;
-  border-radius: 5px;
+	background: #fff;
+	padding: 5px;
+	width: 80%;
+	/* center horizontally */
+	margin: auto;
+	border-radius: 5px;
 }
 
 .columns section {
-  padding: 10px;
+	padding: 10px;
 }
 
 /* Rainbow */
 
 #rainbow {
-    width: 80%;
-    margin: auto;
-    height: 300px;
-    background: linear-gradient(45deg, red 5%, orange 20%, yellow 35%, blue 50%, green 75%, indigo 90%, violet 100%);
+	width: 80%;
+	margin: auto;
+	height: 300px;
+	background: linear-gradient(45deg, red 5%, orange 20%, yellow 35%, blue 50%, green 75%, indigo 90%, violet 100%);
 }
 
 #thermometer {
-    width: 50px;
-    height: 200px;
-    border: 2px solid black;
-    background: linear-gradient(0deg, red, var(--funds), white var(--funds) 100%);
+	width: 50px;
+	height: 200px;
+	border: 2px solid black;
+	background: linear-gradient(0deg, red, var(--funds), white var(--funds) 100%);
 }
-
-
 
 /* Typography */
 
 h1 {
-  color: darkslategray;
+	color: darkslategray;
 }
 
 .error {
-    color: red;
+	color: red;
 }
 
 /* Larger Resolutions */
 
 @media only screen and (min-width: 600px) {
-  .columns {
-    display: flex;
-  }
+	.columns {
+		display: flex;
+	}
 
-  .one {
-    flex: 1;
-  }
+	.one {
+		flex: 1;
+	}
 }
