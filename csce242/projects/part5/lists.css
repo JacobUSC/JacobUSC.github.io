@@ -1,0 +1,45 @@
+/* Deck List */
+#list-header {
+	background: var(--yami-color2);
+	display: flex;
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 25px;
+}
+
+.deck-list {
+	background: var(--yami-color2);
+	width: 75%;
+	margin: auto;
+}
+
+.deck-list h3,
+.deck-list h4 {
+	text-align: center;
+}
+
+.deck-list-card {
+	display: block;
+	margin: auto;
+	width: 25%;
+}
+
+/* larger Screens*/
+
+@media only screen and (min-width: 768px) {
+	#list-area {
+		display: flex;
+	}
+
+	.deck-list {
+		width: 25%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.deck-list-card {
+		width: 50%;
+	}
+}

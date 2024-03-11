@@ -1,0 +1,112 @@
+/* Navigation */
+nav {
+	font-family: var(--style-fonts);
+}
+
+button {
+	font-family: var(--style-fonts);
+}
+
+#nav-button {
+	background: var(--yami-color1);
+	color: var(--yami-color3);
+	width: 150px;
+	height: 50px;
+	margin-right: 10px;
+	border: 1px solid var(--yami-color4);
+	border-radius: 10px;
+	text-align: center;
+}
+
+#nav-button:hover {
+	background: var(--yami-color5);
+}
+
+#nav-button h1 {
+	margin: auto;
+}
+
+#nav-button h1:hover {
+	color: var(--yami-color1);
+}
+
+#main-nav {
+	display: var(--menu);
+	background: var(--yami-color1);
+	opacity: 10;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: opacity 0.25s ease;
+	z-index: 1030;
+}
+
+#close-nav-button {
+	background: var(--yami-color3);
+	color: var(--yami-color1);
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	text-align: center;
+}
+
+#close-nav-button h1 {
+	margin: auto;
+}
+
+#close-nav-button:hover {
+	background: var(--yami-color4);
+}
+
+#main-nav ul {
+	margin: auto;
+	padding: 5px;
+	list-style-type: none;
+}
+
+#main-nav a {
+	color: var(--yami-color3);
+	text-decoration: none;
+	font-size: 2em;
+	text-align: center;
+}
+
+#main-nav li {
+	background: var(--yami-color1);
+	border: 1px solid var(--yami-color4);
+	border-radius: 10px;
+	text-align: center;
+	padding: 5px;
+	margin: auto;
+}
+
+#main-nav li:hover {
+	background: var(--yami-color5);
+	color: var(--yami-color1);
+}
+
+#account-nav {
+	display: var(--account-buttons);
+}
+
+#account-nav button {
+	color: var(--yami-color3);
+	background: none;
+	border: none;
+	width: 100%;
+	font-size: 2em;
+}
+
+#account-nav button:hover {
+	color: var(--yami-color1);
+}
+
+@media only screen and (min-width: 1000px) {
+	#main-nav {
+		width: 15%;
+		left: 85%;
+	}
+}

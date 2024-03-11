@@ -1,0 +1,39 @@
+/* Card List */
+:root {
+	--show-big-card: none;
+}
+
+#card-list-header {
+	background: var(--yami-color2);
+	border-radius: 25px;
+	display: flex;
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#card-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.list-card {
+	width: 25%;
+	padding: 10px;
+	margin: auto;
+}
+
+#big-card {
+	display: var(--show-big-card);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1030;
+}
+
+.big-card {
+	height: 90%;
+}
