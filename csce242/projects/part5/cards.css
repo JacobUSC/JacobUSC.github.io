@@ -1,6 +1,7 @@
 /* Card List */
 :root {
 	--show-big-card: none;
+	--card-list-size: 100px;
 }
 
 #card-list-header {
@@ -14,8 +15,10 @@
 }
 
 #card-list {
+	height: var(--card-list-size);
 	display: flex;
 	flex-wrap: wrap;
+	overflow: scroll;
 }
 
 .list-card {
@@ -27,13 +30,13 @@
 #big-card {
 	display: var(--show-big-card);
 	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 1030;
 }
 
 .big-card {
 	height: 90%;
+	display: block;
+	margin: auto;
 }

@@ -22,14 +22,13 @@ const showCards = async () => {
 		image.classList.add("list-card");
 		image.src = `images/cards/${card.id}.jpg`;
 		image.onclick = () => {
-			const root = document.querySelector(":root");
 			root.style.setProperty("--show-overlay", "block");
 			const bigCardDiv = document.getElementById("big-card");
 			bigCardDiv.innerHTML = "";
 			const bigCardImg = document.createElement("img");
-			bigCardImg.src = image.src;
+			bigCardImg.src = `images/cards/${card.id}.jpg`;
 			bigCardImg.classList.add("big-card");
-			bigCardDiv.append(image);
+			bigCardDiv.append(bigCardImg);
 			root.style.setProperty("--show-big-card", "block");
 			bigCardDiv.onclick = () => {
 				root.style.setProperty("--show-big-card", "none");
@@ -41,4 +40,16 @@ const showCards = async () => {
 	console.log("====Complete====");
 };
 
+const openSearch = () => {};
+
+const search = () => {};
+
+const openSort = () => {};
+
+const sort = () => {};
+
+root.style.setProperty("--card-list-size", `${window.innerHeight - 200}px`);
 showCards();
+
+document.getElementById("search-button").onclick = openSearch;
+document.getElementById("sort-button").onclick = openSort;
