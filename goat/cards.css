@@ -1,0 +1,73 @@
+/* Author: Jacob Russell */
+/* CSS for The Card list page */
+/* cards.html */
+:root {
+	--show-big-card: none;
+	--show-sort: none;
+	--card-list-size: 100px;
+	--card-list-size-mobile: 100px;
+}
+
+#card-list-header {
+	background: var(--yami-color2);
+	border-radius: 25px;
+	display: flex;
+	padding: 10px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#card-list {
+	height: var(--card-list-size-mobile);
+	display: flex;
+	flex-wrap: wrap;
+	overflow: scroll;
+}
+
+.list-card {
+	width: 50%;
+	padding: 50px;
+	margin: auto;
+}
+
+#big-card {
+	display: var(--show-big-card);
+	position: fixed;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	z-index: 1030;
+}
+
+.big-card {
+	display: block;
+	height: auto;
+	width: 80%;
+	margin: auto;
+}
+
+#sort-div {
+	background: var(--yami-color3);
+	display: var(--show-sort);
+	position: fixed;
+	width: 50%;
+	height: 50%;
+	margin: auto;
+	z-index: 1030;
+}
+
+@media only screen and (min-width: 1000px) {
+	#card-list {
+		height: var(--card-list-size);
+	}
+
+	.list-card {
+		width: 400px;
+	}
+
+	.big-card {
+		height: 90%;
+		width: auto;
+	}
+}
