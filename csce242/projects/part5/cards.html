@@ -45,12 +45,76 @@
 			<!--Todo-->
 		</div>
 		<div id="big-card"></div>
+		<div id="sort-div">
+			<button id="close-sort">X</button>
+			<form id="sort-form">
+				<h2>Sort</h2>
+				<input type="text" id="search-text" name="search-txt">
+				<label for="search-text">Search</label>
+				<h3>Card Types</h3>
+				<form>
+					<div id="card-types">
+						<div>
+							<h3>Card Type</h3>
+							<input type="checkbox" id="monster-card" name="monster-card" value="Monster">
+							<label for="normal-monster">Monster </label>
+							<p></p>
+							<input type="checkbox" id="spell-card" name="spell-card" value="Spell Card">
+							<label for="spell-card">Spell Card</label>
+							<p></p>
+							<input type="checkbox" id="trap-card" name="trap-card" value="Trap Card">
+							<label for="trap-card">Trap Card</label>
+							<p></p>
+						</div>
+						<div>
+							<h3>Monster Type</h3>
+							<input type="checkbox" id="normal-monster" name="normal-monster" value="Normal Monster">
+							<label for="normal-monster">Normal Monster</label>
+							<p></p>
+							<input type="checkbox" id="effect-monster" name="effect-monster" value="Effect Monster">
+							<label for="effect-monster">Effect Monster</label>
+							<p></p>
+							<input type="checkbox" id="flip-monster" name="flip-monster" value="Flip Effect Monster">
+							<label for="flip-monster">Flip Effect Monster</label>
+							<p></p>
+							<input type="checkbox" id="fusion-monster" name="fusion-monster" value="Effect Monster">
+							<label for="fusion-monster">Fusion Monster</label>
+							<p></p>
+						</div>
+						<div>
+							<h3>Spell Type</h3>
+							<input type="checkbox" id="normal-spell" name="normal-spell" value="Normal">
+							<label for="spell">Spell</label>
+							<p></p>
+							<input type="checkbox" id="equip-spell" name="equip-spell" value="Equip">
+							<label for="spell">Equip Spell</label>
+							<p></p>
+							<input type="checkbox" id="continuous-spell" name="continuous-spell" value="Continuous">
+							<label for="spell">Continuous Spell</label>
+							<p></p>
+							<input type="checkbox" id="spell" name="spell" value="Quick-Play">
+							<label for="spell">Quick-Play Spell</label>
+							<p></p>
+							<input type="checkbox" id="spell" name="spell" value="">
+							<label for="spell">Field Spell</label>
+							<p></p>
+						</div>
+						<div>
+							<h3>Trap Type</h3>
+						</div>
+					</div>
+				</form>
+
+				
+				<p><button type="submit" id="sort-sumbit">Submit</button></p>
+			</form>
+			<button id="clear">Clear</button>
+		</div>
 		<main id="flex-override">
 			<div id="main-content">
 				<div id="card-list-header">
 					<h2>Card List</h2>
-					<button id="search-button"><h1>&#128270</h1></button>
-					<button id="sort-button"><h1>&#129520</h1></button>
+					<button id="open-sort-button"><h1>&#128270</h1></button>
 				</div>
 				<div id="card-list">
 					<!-- this is where the cards go -->
