@@ -158,6 +158,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		overflow: scroll;
+		overflow-x: hidden;
 	}
 
 	.big-card {

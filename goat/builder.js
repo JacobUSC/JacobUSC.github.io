@@ -110,6 +110,7 @@ const updateSize = () => {
 	const deckHeight = document.getElementById("deck").offsetHeight;
 	root.style.setProperty("--card-pool-size", `${deckHeight}px`);
 	root.style.setProperty("--card-list-size", `${deckHeight - 110}px`);
+	document.getElementById("card-count").innerHTML = `Card Count: ${deck.length}`;
 };
 
 const addCardDeck = (ev) => {
@@ -123,11 +124,11 @@ const addCardDeck = (ev) => {
 	if (deckCheck(card)) {
 		deck.push(card);
 		deckRefresh();
+		updateSize();
 	} else {
 		console.log("invalid card");
 		//make popup
 	}
-	updateSize();
 };
 
 const addCardExtra = (ev) => {

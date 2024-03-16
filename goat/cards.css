@@ -23,6 +23,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	overflow: scroll;
+	overflow-x: hidden;
 }
 
 .list-card {
