@@ -30,12 +30,16 @@
 						<label for="contact-message">Message:</label>
 						<textarea id="contact-message" name="contact-message" required></textarea>
 					</p>
+					<!-- hCaptcha -->
+					<p><div class="h-captcha" data-captcha="true"></div></p>
 					<input type="hidden" name="redirect" value="https://web3forms.com/success"/>
 					<input type="hidden" name="subject" value="Contact from Goat Deck Builder Website"/>
 					<input type="hidden" name="from_name" value="My Website" />
 					<p><button id="contact-submit" type="submit"><h3>Submit</h3></button></p>
 					<p id="contact-result"></p>
 				</form>
+				<!-- Required for hCaptcha -->
+				<script src="https://web3forms.com/client/script.js" async defer></script>
 			</div>
 		</div>
 		<div id="big-card"></div>
