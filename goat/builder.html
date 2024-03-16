@@ -11,6 +11,187 @@
 		<link rel="stylesheet" href="builder.css">
 	</head>
 	<body>
+		<div id="transparent-overlay"></div>
+		<div id="contact" class="modal">
+			<div class="modal-content">
+				<h3 class="modal-close"><button id="close-contact">X</button></h3>
+				<h2>Contact Me</h2>
+				<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+					<input type="hidden" name="access_key" value="b111c222-04d8-45d5-bb73-3fabe00a7161">
+					<p>
+						<label for="contact-name">Name:</label>
+						<input type="text" id="contact-name" name="contact-name" required>
+					</p>
+					<p>
+						<label for="contact-email">Email:</label>
+						<input type="email" id="contact-email" name="contact-email" required>
+					</p>
+					<p>
+						<label for="contact-message">Message:</label>
+						<textarea id="contact-message" name="contact-message" required></textarea>
+					</p>
+					<input type="hidden" name="redirect" value="https://web3forms.com/success"/>
+					<input type="hidden" name="subject" value="Contact from Goat Deck Builder Website"/>
+					<input type="hidden" name="from_name" value="My Website" />
+					<p><button id="contact-submit" type="submit"><h3>Submit</h3></button></p>
+					<p id="contact-result"></p>
+				</form>
+			</div>
+		</div>
+		<div id="big-card"></div>
+		<div id="filter" class="modal">
+			<div class="modal-content">
+				<h3 class="modal-close"><button id="close-filter">X</button></h3>
+				<form id="filter-form">
+					<h2>Filter Options</h2>
+					<p>
+						<label for="search-text">Search: </label>
+						<input type="text" id="search-text" name="search-txt">
+					</p>
+					<div class="fields">
+						<div>
+							<h3>Card Type</h3>
+							<p>
+								<select id="card-type" name="card-type">
+									<option value="None">None</option>
+									<option value="Monster">Monster</option>
+									<option value="Spell">Spell</option>
+									<option value="Trap">Trap</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Monster Type</h3>
+							<p>
+								<select id="monster-type" name="monster-type">
+									<option value="None">None</option>
+									<option value="Normal">Normal</option>
+									<option value="Effect Monster">Effect</option>
+									<option value="Flip Effect Monster">Flip Effect</option>
+									<option value="Fusion Monster">Fusion</option>
+									<option value="Ritual Monster">Ritual</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Spell Type</h3>
+							<p>
+								<select id="spell-type">
+									<option value="None">None</option>
+									<option value="Normal">Normal</option>
+									<option value="Equip">Equip</option>
+									<option value="Continuous">Continuous</option>
+									<option value="Quick-Play">Quick-Play</option>
+									<option value="Field">Field</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Trap Type</h3>
+							<p>
+								<select id="trap-type">
+									<option value="None">None</option>
+									<option value="Normal">Normal</option>
+									<option value="Continuous">Continuous</option>
+									<option value="Counter">Counter</option>
+								</select>
+							</p>
+						</div>
+					</div>
+					<div class="fields">
+						<div>
+							<h3>Monster Attribute</h3>
+							<p>
+								<select id="monster-attr" name="monster-attr">
+									<option value="None">None</option>
+									<option value="DARK">Dark</option>
+									<option value="LIGHT">Light</option>
+									<option value="EARTH">Earth</option>
+									<option value="WIND">Wind</option>
+									<option value="FIRE">Fire</option>
+									<option value="WATER">Water</option>
+								</select>
+							</p>	
+						</div>
+						<div>
+							<h3>Monster Race</h3>
+							<p>
+								<select id="monster-race" name="monster-race">
+									<option value="None">None</option>
+									<option value="Aqua">Aqua</option>
+									<option value="Beast">Beast</option>
+									<option value="Beast-Warrior">Beast-Warrior</option>
+									<option value="Dinosaur">Dinosaur</option>
+									<option value="Dragon">Dragon</option>
+									<option value="Fairy">Fairy</option>
+									<option value="Fiend">Fiend</option>
+									<option value="Fish">Fish</option>
+									<option value="Insect">Insect</option>
+									<option value="Machine">Machine</option>
+									<option value="Plant">Plant</option>
+									<option value="Pyro">Pyro</option>
+									<option value="Reptile">Reptile</option>
+									<option value="Rock">Rock</option>
+									<option value="Sea Serpent">Sea Serpent</option>
+									<option value="Spellcaster">Spellcaster</option>
+									<option value="Thunder">Thunder</option>
+									<option value="Warrior">Warrior</option>
+									<option value="Winged Beast">Winged Beast</option>
+									<option value="Zombie">Zombie</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Attack Range</h3>
+							<label for="atk-max">Attack Max</label>
+							<input type="number" max="9999" min="0" id="atk-max" name="atk-max" value="0">
+							<p></p>
+							<label for="atk-min">Attack Min</label>
+							<input type="number" max="9999" min="0" id="atk-min" name="atk-min" value="0">
+						</div>
+						<div>
+							<h3>Defense Range</h3>
+							<label for="def-max">Defense Max</label>
+							<input type="number" max="9999" min="0" id="def-max" name="def-max" value="0">
+							<p></p>
+							<label for="def-min">Defense Min</label>
+							<input type="number" max="9999" min="0" id="def-min" name="def-min" value="0">
+						</div>
+					</div>
+					<p><input type="submit" value="Submit"></p>
+					<p><input type="reset" value="Reset"></p>
+				</form>
+			</div>
+		</div>
+		<div id="upload" class="modal">
+			<div class="modal-content">
+				<h3 class="modal-close"><button id="close-upload">X</button></h3>
+				<h2>Upload Your Deck</h2>
+				<form id="upload-form">
+					<p>
+						<label for="deck-name">Deck Name:</label>
+						<input type="text" id="deck-name" name="deck-name" required="true" maxlength="20">
+					</p>
+					<p>
+						<label for="user-name">Your Name:</label>
+						<input type="text" id="user-name" name="user-name" required="true" maxlength="20">
+					</p>
+					<p>
+						<label for="user-email">Your Name:</label>
+						<input type="email" id="user-email" name="user-email" required="true" maxlength="200">
+					</p>
+					<p>
+						<label for="featured-card">Featured Card</label>
+						<select id="featured-card" name="featured-card" required="true"></select>
+					</p>
+					<p>
+						<label for="deck-description">Deck Description</label>
+						<textarea id="deck-description" name="deck-description" required="true" maxlength="2000"></textarea>
+					</p>
+					<p><input type="submit" value="Submit"></p>
+				</form>
+			</div>
+		</div>
 		<header>
 			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
 			<h1>Yugioh Goat Format Deck Builder</h1>
@@ -20,79 +201,38 @@
 			<button id="close-nav-button"><h1>X</h1></button>
 			<ul id="page-nav">
 				<a href="index.html"><li><p>Home</p></li></a>
+				<a href="help.html"><li><p>Help</p></li></a>
 				<a href="#"><li><p>Deck Builder</p></li></a>
 				<a href="lists.html"><li><p>Deck Lists</p></li></a>
 				<a href="cards.html"><li><p>Card List</p></li></a>
-				<a href="rules.html"><li><p>Rules</p></li></a>
-				<a href="where.html"><li><p>Where to Play</p></li></a>
+				<a href="events.html"><li><p>Events</p></li></a>
+				<a href="#" id="open-contact"><li><p>Contact Me</p></li></a>
 			</ul>
-			<ul id="account-nav">
-				<li><button id="signup-button">Signup</button></li>
-				<li><button id="login-button">Login</button></li>
-			</ul>
-			<!-- Signed in Account Div Here-->
 		</nav>
-		<div id="transparent-overlay"></div>
-		<div class="fields" id="signup-menu">
-			<button id="exit-signup">Exit</button>
-			<h1>Create an Acount</h1>
-			<h3>Under Construction</h3>
-			<!--Todo-->
-		</div>
-		<div id="login-menu" class="fields">
-			<button id="exit-login">Exit</button>
-			<h1>Sign In</h1>
-			<h3>Under Construction</h3>
-			<!--Todo-->
-		</div>
 		<main>
 			<div id="deck">
 				<div id="deck-header">
-					<h2>Deck Name</h2>
-					<h3>Card Count: 10</h3>
-					<button id="upload-button"><h1>&#128228</h1></button>
-					<button id="save-button"><h1>&#128190</h1></button>
+					<h2 id="card-count">Card Count: 0</h2>
+					<button id="open-upload"><h1>&#128228</h1></button>
+					<button id="open-save"><h1>&#128190</h1></button>
 				</div>
 				<div id="deck-area">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-					<img src="images/cards/98818516.jpg" class="deck-card">
-
+					<!-- Deck Cards Go Here -->
 				</div>
 				<div id="fusion-deck">
 					<h3>Fusion Deck</h3>
 					<div id="fusion-deck-area">
-						<img src="images/cards/98502113.jpg" class="deck-card">
-						<img src="images/cards/98502113.jpg" class="deck-card">
-						<img src="images/cards/98502113.jpg" class="deck-card">
+						<!-- Fusion Cards Go Here -->
 					</div>
 				</div>
 			</div>
 			<div id="card-pool">
 				<div id="card-pool-header">
 					<h2>Cards</h2>
-					<button id="search-button"><h1>&#128270</h1></button>
-					<button id="sort-button"><h1>&#129520</h1></button>
+					<button id="open-filter"><h1>&#128270</h1></button>
 				</div>
-				<div id="card-area">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
-					<img src="images/cards/98446407.jpg" class="card-pool-card">
+				<div id="card-list">
+					<!-- this is where the cards go -->
 				</div>
 			</div>
 		</main>
@@ -102,5 +242,8 @@
 			<p>All other content &#169; 2024 Jacob Russell</p>
 		</footer>
 		<script src="script.js"></script>
+		<script src="contact.js"></script>
+		<script src="cards.js"></script>
+		<script src="builder.js"></script>
 	</body>
 </html>

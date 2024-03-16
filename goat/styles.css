@@ -16,10 +16,8 @@
 
 	/* Display Elements Variables */
 	--menu: none;
-	--account-buttons: block;
 	--show-overlay: none;
-	--show-signup: none;
-	--show-login: none;
+	--show-contact: none;
 }
 
 body {
@@ -74,41 +72,75 @@ footer {
 	display: none;
 }
 
-/* Signup and Login*/
-
-#signup-menu {
-	display: var(--show-signup);
-}
-
-#login-menu {
-	display: var(--show-login);
-}
+/* Modal Popup */
 
 #transparent-overlay {
 	display: var(--show-overlay);
-	background: var(--yami-color2);
-	opacity: 0.5;
+	background: var(--yami-color2-transparent);
 	width: 100%;
+	height: 100%;
 	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	transition: opacity 0.25s ease;
 	z-index: 1029;
 }
 
-.fields {
-	background: var(--yami-color3);
-	opacity: none;
-	width: 70%;
-	height: 70%;
+.modal {
+	background: var(--yami-color2-transparent);
+	width: 100%;
+	height: 100%;
 	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	transition: opacity 0.25s ease;
 	z-index: 1030;
+}
+
+.modal-content {
+	background: var(--yami-color3);
+	border-radius: 15px;
+	width: 70%;
+	height: fit-content;
+	margin: auto;
+	margin-top: 5%;
+	padding-bottom: 5px;
+}
+
+.modal-close {
+	text-align: right;
+}
+
+.modal-close button {
+	margin-top: 5px;
+	margin-right: 5px;
+	font-size: 1em;
+	border-radius: 25px;
+}
+
+/* Contact Me */
+
+#contact {
+	display: var(--show-contact);
+}
+
+#contact h2 {
+	text-align: center;
+}
+
+#contact p {
+	margin: auto;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.h-captcha {
+	margin: auto;
+	text-align: center;
+}
+
+#contact-submit {
+}
+
+#contact-submit h3 {
+	padding: none;
+	margin: none;
 }
 
 /* Typography */

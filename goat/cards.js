@@ -1,8 +1,10 @@
 /**
  * Author: Jacob Russell
- * Loads card data from ygoprodeck
- * Generates a card list
- * Filters and searches the card list
+ * Description:
+ * Loads card data from ygoprodeck.
+ * Generates a card list.
+ * Filters and searches the card list.
+ * For: cards.html builder.html
  */
 
 /**
@@ -46,8 +48,8 @@ const getCardHTML = (card) => {
 	const image = document.createElement("img");
 	image.classList.add("list-card");
 	image.src = `images/cards/${card.id}.jpg`;
+	image.draggable = "true";
 	image.onclick = () => {
-		root.style.setProperty("--show-overlay", "block");
 		const bigCardDiv = document.getElementById("big-card");
 		bigCardDiv.innerHTML = "";
 		const bigCardImg = document.createElement("img");
@@ -57,44 +59,75 @@ const getCardHTML = (card) => {
 		root.style.setProperty("--show-big-card", "block");
 		bigCardDiv.onclick = () => {
 			root.style.setProperty("--show-big-card", "none");
-			root.style.setProperty("--show-overlay", "none");
 		};
+	};
+	image.ondragstart = (ev) => {
+		ev.dataTransfer.setData("cardID", card.id);
 	};
 	return image;
 };
 
-const openSort = () => {
-	root.style.setProperty("--show-overlay", "block");
-	root.style.setProperty("--show-sort", "block");
+const openFilter = () => {
+	root.style.setProperty("--show-filter", "block");
 };
 
-const closeSort = () => {
-	root.style.setProperty("--show-sort", "none");
-	root.style.setProperty("--show-overlay", "none");
+const closeFilter = () => {
+	root.style.setProperty("--show-filter", "none");
 };
 
-const sort = (e) => {
+const filter = (e) => {
 	e.preventDefault();
 	const cardsSorted = [];
 	const cardList = document.getElementById("card-list");
 	cardList.innerHTML = "";
-	const form = document.getElementById("sort-form");
+	const form = document.getElementById("filter-form");
 	const search = form.elements["search-text"].value.trim().toLowerCase();
+	const cardType = form.elements["card-type"].value;
+	const monsterType = form.elements["monster-type"].value;
+	const spellType = form.elements["spell-type"].value;
+	const trapType = form.elements["trap-type"].value;
+	const monsterAttr = form.elements["monster-attr"].value;
+	const monsterRace = form.elements["monster-race"].value;
+	const maxAtk = form.elements["atk-max"].value;
+	const minAtk = form.elements["atk-min"].value;
+	const maxDef = form.elements["def-max"].value;
+	const minDef = form.elements["def-min"].value;
 	cards.forEach((card) => {
-		if ((!search == "" && card.name.toLowerCase().includes(search)) || card.desc.toLowerCase().includes(search)) {
-			cardsSorted.push(card);
-			return;
+		if (search != "") {
+			//better search logic
+			if (!card.name.toLowerCase().includes(search) && !card.desc.toLowerCase().includes(search)) return;
 		}
+		if (cardType != "None") {
+			if (!card.type.includes(cardType)) return;
+			if (monsterType != "None" && !card.type.includes(monsterType)) return;
+			if (spellType != "None" && card.race != spellType) return;
+			if (trapType != "None" && card.race != trapType) return;
+			if (cardType.includes("Monster")) {
+				if (monsterAttr != "None" && monsterAttr != card.attribute) return;
+				if (monsterRace != "None" && monsterRace != card.race) return;
+				if (maxAtk != 0 && card.atk >= maxAtk) return;
+				if (minAtk != 0 && card.atk < minAtk) return;
+				if (maxDef != 0 && card.def >= maxDef) return;
+				if (minDef != 0 && card.def < minDef) return;
+			}
+		}
+		cardsSorted.push(card);
 	});
-	cardsSorted.forEach((card) => {
-		cardList.append(getCardHTML(card));
-	});
+	if (cardsSorted.length == 0) {
+		window.alert("Invalid Filter Criteria");
+		//make popup
+	} else {
+		cardsSorted.forEach((card) => {
+			cardList.append(getCardHTML(card));
+		});
+		closeFilter();
+	}
 };
 
 root.style.setProperty("--card-list-size", `${window.innerHeight - 200}px`);
 root.style.setProperty("--card-list-size-mobile", `${window.innerHeight - 300}px`);
 showCardsFirst();
 
-document.getElementById("open-sort-button").onclick = openSort;
-document.getElementById("sort-form").onsubmit = sort;
-document.getElementById("close-sort").onclick = closeSort;
+document.getElementById("open-filter").onclick = openFilter;
+document.getElementById("filter-form").onsubmit = filter;
+document.getElementById("close-filter").onclick = closeFilter;

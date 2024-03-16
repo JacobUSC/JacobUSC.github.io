@@ -2,7 +2,12 @@
 /* CSS for The Card Builder page */
 /* builder.html */
 :root {
-	--pool-height: 600px;
+	--show-big-card: none;
+	--show-filter: none;
+	--show-upload: none;
+	--card-list-size: 100px;
+	--card-list-size-mobile: 100px;
+	--card-pool-size: auto;
 }
 
 #deck {
@@ -27,10 +32,12 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding: 10px;
+	min-height: 300px;
+	height: fit-content;
 }
 
 .deck-card {
-	width: 10%;
+	margin: auto;
 	padding: 10px;
 }
 
@@ -48,7 +55,10 @@
 
 #fusion-deck-area {
 	display: flex;
+	flex-wrap: wrap;
 	padding: 10px;
+	min-height: 300px;
+	height: fit-content;
 }
 
 #card-pool {
@@ -69,15 +79,64 @@
 	justify-content: space-between;
 }
 
-#card-area {
+#card-list {
 	display: flex;
 	padding: 10px;
 	overflow: scroll;
 }
 
-.card-pool-card {
-	width: 120px;
+.list-card {
+	border-radius: 15px;
+	width: 150px;
 	padding: 10px;
+	margin: auto;
+}
+
+#big-card {
+	display: var(--show-big-card);
+	background: var(--yami-color2-transparent);
+	position: fixed;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	z-index: 1030;
+}
+
+.big-card {
+	display: block;
+	height: auto;
+	width: 80%;
+	margin: auto;
+	margin-top: 30%;
+	border-radius: 15px;
+}
+
+#filter {
+	display: var(--show-filter);
+}
+
+#filter p {
+	text-align: center;
+}
+
+#filter h2 {
+	text-align: center;
+}
+
+.fields h3 {
+	text-align: center;
+}
+
+#upload {
+	display: var(--show-upload);
+}
+
+#upload h2 {
+	text-align: center;
+}
+
+#upload p {
+	text-align: center;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -86,7 +145,32 @@
 		height: var(--pool-height);
 	}
 
-	.card-pool-card {
-		width: 200px;
+	.deck-card {
+		width: 150px;
+	}
+
+	#card-pool {
+		height: var(--card-pool-size);
+	}
+
+	#card-list {
+		height: var(--card-list-size);
+		display: flex;
+		flex-wrap: wrap;
+		overflow: scroll;
+	}
+
+	.big-card {
+		height: 95%;
+		width: auto;
+		margin-top: 1%;
+	}
+
+	.fields {
+		display: flex;
+	}
+
+	.fields div {
+		margin: auto;
 	}
 }

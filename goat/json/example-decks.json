@@ -1,0 +1,11 @@
+[
+	{
+		"_id": 1,
+		"deck_name": "Yami Yugi's Deck",
+		"user": "Yami Yugi",
+		"featured_card": 1,
+		"description": "This is a Deck inspired by Yami Yugi's Anime/Manga Deck.",
+		"deck": [],
+		"extra": []
+	}
+]

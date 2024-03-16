@@ -3,13 +3,13 @@
 /* cards.html */
 :root {
 	--show-big-card: none;
-	--show-sort: none;
+	--show-filter: none;
 	--card-list-size: 100px;
 	--card-list-size-mobile: 100px;
 }
 
 #card-list-header {
-	background: var(--yami-color2);
+	background: var(--yami-color2-transparent);
 	border-radius: 25px;
 	display: flex;
 	padding: 10px;
@@ -26,13 +26,14 @@
 }
 
 .list-card {
-	width: 50%;
+	border-radius: 15px;
 	padding: 50px;
 	margin: auto;
 }
 
 #big-card {
 	display: var(--show-big-card);
+	background: var(--yami-color2-transparent);
 	position: fixed;
 	margin: auto;
 	width: 100%;
@@ -45,16 +46,24 @@
 	height: auto;
 	width: 80%;
 	margin: auto;
+	margin-top: 30%;
+	border-radius: 15px;
 }
 
-#sort-div {
-	background: var(--yami-color3);
-	display: var(--show-sort);
-	position: fixed;
-	width: 50%;
-	height: 50%;
-	margin: auto;
-	z-index: 1030;
+#filter {
+	display: var(--show-filter);
+}
+
+#filter p {
+	text-align: center;
+}
+
+#filter h2 {
+	text-align: center;
+}
+
+.fields h3 {
+	text-align: center;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -62,12 +71,17 @@
 		height: var(--card-list-size);
 	}
 
-	.list-card {
-		width: 400px;
+	.big-card {
+		height: 95%;
+		width: auto;
+		margin-top: 1%;
 	}
 
-	.big-card {
-		height: 90%;
-		width: auto;
+	.fields {
+		display: flex;
+	}
+
+	.fields div {
+		margin: auto;
 	}
 }

@@ -11,6 +11,162 @@
 		<link rel="stylesheet" href="cards.css">
 	</head>
 	<body>
+		<div id="transparent-overlay"></div>
+		<div id="contact" class="modal">
+			<div class="modal-content">
+				<h3 class="modal-close"><button id="close-contact">X</button></h3>
+				<h2>Contact Me</h2>
+				<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+					<input type="hidden" name="access_key" value="b111c222-04d8-45d5-bb73-3fabe00a7161">
+					<p>
+						<label for="contact-name">Name:</label>
+						<input type="text" id="contact-name" name="contact-name" required>
+					</p>
+					<p>
+						<label for="contact-email">Email:</label>
+						<input type="email" id="contact-email" name="contact-email" required>
+					</p>
+					<p>
+						<label for="contact-message">Message:</label>
+						<textarea id="contact-message" name="contact-message" required></textarea>
+					</p>
+					<!-- hCaptcha -->
+					<p><div class="h-captcha" data-captcha="true"></div></p>
+					<input type="hidden" name="redirect" value="https://web3forms.com/success"/>
+					<input type="hidden" name="subject" value="Contact from Goat Deck Builder Website"/>
+					<input type="hidden" name="from_name" value="My Website" />
+					<p><button id="contact-submit" type="submit"><h3>Submit</h3></button></p>
+					<p id="contact-result"></p>
+				</form>
+				<!-- Required for hCaptcha -->
+				<script src="https://web3forms.com/client/script.js" async defer></script>
+			</div>
+		</div>
+		<div id="big-card"></div>
+		<div id="filter" class="modal">
+			<div class="modal-content">
+				<h3 class="modal-close"><button id="close-filter">X</button></h3>
+				<form id="filter-form">
+					<h2>Filter Options</h2>
+					<p>
+						<label for="search-text">Search: </label>
+						<input type="text" id="search-text" name="search-txt">
+					</p>
+					<div class="fields">
+						<div>
+							<h3>Card Type</h3>
+							<p>
+								<select id="card-type" name="card-type">
+									<option value="None">None</option>
+									<option value="Monster">Monster</option>
+									<option value="Spell">Spell</option>
+									<option value="Trap">Trap</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Monster Type</h3>
+							<p>
+								<select id="monster-type" name="monster-type">
+									<option value="None">None</option>
+									<option value="Normal">Normal</option>
+									<option value="Effect Monster">Effect</option>
+									<option value="Flip Effect Monster">Flip Effect</option>
+									<option value="Fusion Monster">Fusion</option>
+									<option value="Ritual Monster">Ritual</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Spell Type</h3>
+							<p>
+								<select id="spell-type">
+									<option value="None">None</option>
+									<option value="Normal">Normal</option>
+									<option value="Equip">Equip</option>
+									<option value="Continuous">Continuous</option>
+									<option value="Quick-Play">Quick-Play</option>
+									<option value="Field">Field</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Trap Type</h3>
+							<p>
+								<select id="trap-type">
+									<option value="None">None</option>
+									<option value="Normal">Normal</option>
+									<option value="Continuous">Continuous</option>
+									<option value="Counter">Counter</option>
+								</select>
+							</p>
+						</div>
+					</div>
+					<div class="fields">
+						<div>
+							<h3>Monster Attribute</h3>
+							<p>
+								<select id="monster-attr" name="monster-attr">
+									<option value="None">None</option>
+									<option value="DARK">Dark</option>
+									<option value="LIGHT">Light</option>
+									<option value="EARTH">Earth</option>
+									<option value="WIND">Wind</option>
+									<option value="FIRE">Fire</option>
+									<option value="WATER">Water</option>
+								</select>
+							</p>	
+						</div>
+						<div>
+							<h3>Monster Race</h3>
+							<p>
+								<select id="monster-race" name="monster-race">
+									<option value="None">None</option>
+									<option value="Aqua">Aqua</option>
+									<option value="Beast">Beast</option>
+									<option value="Beast-Warrior">Beast-Warrior</option>
+									<option value="Dinosaur">Dinosaur</option>
+									<option value="Dragon">Dragon</option>
+									<option value="Fairy">Fairy</option>
+									<option value="Fiend">Fiend</option>
+									<option value="Fish">Fish</option>
+									<option value="Insect">Insect</option>
+									<option value="Machine">Machine</option>
+									<option value="Plant">Plant</option>
+									<option value="Pyro">Pyro</option>
+									<option value="Reptile">Reptile</option>
+									<option value="Rock">Rock</option>
+									<option value="Sea Serpent">Sea Serpent</option>
+									<option value="Spellcaster">Spellcaster</option>
+									<option value="Thunder">Thunder</option>
+									<option value="Warrior">Warrior</option>
+									<option value="Winged Beast">Winged Beast</option>
+									<option value="Zombie">Zombie</option>
+								</select>
+							</p>
+						</div>
+						<div>
+							<h3>Attack Range</h3>
+							<label for="atk-max">Attack Max</label>
+							<input type="number" max="9999" min="0" id="atk-max" name="atk-max" value="0">
+							<p></p>
+							<label for="atk-min">Attack Min</label>
+							<input type="number" max="9999" min="0" id="atk-min" name="atk-min" value="0">
+						</div>
+						<div>
+							<h3>Defense Range</h3>
+							<label for="def-max">Defense Max</label>
+							<input type="number" max="9999" min="0" id="def-max" name="def-max" value="0">
+							<p></p>
+							<label for="def-min">Defense Min</label>
+							<input type="number" max="9999" min="0" id="def-min" name="def-min" value="0">
+						</div>
+					</div>
+					<p><input type="submit" value="Submit"></p>
+					<p><input type="reset" value="Reset"></p>
+				</form>
+			</div>
+		</div>
 		<header>
 			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
 			<h1>Yugioh Goat Format Deck Builder</h1>
@@ -20,102 +176,19 @@
 			<button id="close-nav-button"><h1>X</h1></button>
 			<ul id="page-nav">
 				<a href="index.html"><li><p>Home</p></li></a>
+				<a href="help.html"><li><p>Help</p></li></a>
 				<a href="builder.html"><li><p>Deck Builder</p></li></a>
 				<a href="lists.html"><li><p>Deck Lists</p></li></a>
 				<a href="#"><li><p>Card List</p></li></a>
-				<a href="rules.html"><li><p>Rules</p></li></a>
-				<a href="where.html"><li><p>Where to Play</p></li></a>
+				<a href="events.html"><li><p>Events</p></li></a>
+				<a href="#" id="open-contact"><li><p>Contact Me</p></li></a>
 			</ul>
-			<ul id="account-nav">
-				<li><button id="signup-button">Signup</button></li>
-				<li><button id="login-button">Login</button></li>
-			</ul>
-			<!-- Signed in Account Div Here-->
 		</nav>
-		<div id="transparent-overlay"></div>
-		<div class="fields" id="signup-menu">
-			<button id="exit-signup">Exit</button>
-			<h1>Create an Acount</h1>
-			<h3>Under Construction</h3>
-			<!--Todo-->
-		</div>
-		<div id="login-menu" class="fields">
-			<button id="exit-login">Exit</button>
-			<h1>Sign In</h1>
-			<h3>Under Construction</h3>
-			<!--Todo-->
-		</div>
-		<div id="big-card"></div>
-		<div id="sort-div">
-			<button id="close-sort">X</button>
-			<form id="sort-form">
-				<h2>Sort</h2>
-				<input type="text" id="search-text" name="search-txt">
-				<label for="search-text">Search</label>
-				<h3>Card Types</h3>
-				<form>
-					<div id="card-types">
-						<div>
-							<h3>Card Type</h3>
-							<input type="checkbox" id="monster-card" name="monster-card" value="Monster">
-							<label for="normal-monster">Monster </label>
-							<p></p>
-							<input type="checkbox" id="spell-card" name="spell-card" value="Spell Card">
-							<label for="spell-card">Spell Card</label>
-							<p></p>
-							<input type="checkbox" id="trap-card" name="trap-card" value="Trap Card">
-							<label for="trap-card">Trap Card</label>
-							<p></p>
-						</div>
-						<div>
-							<h3>Monster Type</h3>
-							<input type="checkbox" id="normal-monster" name="normal-monster" value="Normal Monster">
-							<label for="normal-monster">Normal Monster</label>
-							<p></p>
-							<input type="checkbox" id="effect-monster" name="effect-monster" value="Effect Monster">
-							<label for="effect-monster">Effect Monster</label>
-							<p></p>
-							<input type="checkbox" id="flip-monster" name="flip-monster" value="Flip Effect Monster">
-							<label for="flip-monster">Flip Effect Monster</label>
-							<p></p>
-							<input type="checkbox" id="fusion-monster" name="fusion-monster" value="Effect Monster">
-							<label for="fusion-monster">Fusion Monster</label>
-							<p></p>
-						</div>
-						<div>
-							<h3>Spell Type</h3>
-							<input type="checkbox" id="normal-spell" name="normal-spell" value="Normal">
-							<label for="spell">Spell</label>
-							<p></p>
-							<input type="checkbox" id="equip-spell" name="equip-spell" value="Equip">
-							<label for="spell">Equip Spell</label>
-							<p></p>
-							<input type="checkbox" id="continuous-spell" name="continuous-spell" value="Continuous">
-							<label for="spell">Continuous Spell</label>
-							<p></p>
-							<input type="checkbox" id="spell" name="spell" value="Quick-Play">
-							<label for="spell">Quick-Play Spell</label>
-							<p></p>
-							<input type="checkbox" id="spell" name="spell" value="">
-							<label for="spell">Field Spell</label>
-							<p></p>
-						</div>
-						<div>
-							<h3>Trap Type</h3>
-						</div>
-					</div>
-				</form>
-
-				
-				<p><button type="submit" id="sort-sumbit">Submit</button></p>
-			</form>
-			<button id="clear">Clear</button>
-		</div>
 		<main id="flex-override">
 			<div id="main-content">
 				<div id="card-list-header">
 					<h2>Card List</h2>
-					<button id="open-sort-button"><h1>&#128270</h1></button>
+					<button id="open-filter"><h1>&#128270</h1></button>
 				</div>
 				<div id="card-list">
 					<!-- this is where the cards go -->
@@ -128,6 +201,7 @@
 			<p>All other content &#169; 2024 Jacob Russell</p>
 		</footer>
 		<script src="script.js"></script>
+		<script src="contact.js"></script>
 		<script src="cards.js"></script>
 	</body>
 </html>
