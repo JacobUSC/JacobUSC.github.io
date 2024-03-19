@@ -221,13 +221,12 @@ const uploadDeck = (ev) => {
 	console.log(email);
 	console.log(featuredCard);
 	console.log(desc);
-	console.log("Deck cards ids");
 	console.log(subDeck);
-	console.log("Fusion Deck cards ids");
 	console.log(subExtra);
 	message.innerHTML = "Deck successfully submitted";
 	setTimeout(() => {
 		message.innerHTML = "";
+		hideUpload();
 	}, 2000);
 };
 
