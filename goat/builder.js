@@ -143,7 +143,6 @@ const addCardDeck = (ev) => {
 		deck.push(card);
 		deckRefresh();
 	} else {
-		console.log("invalid card");
 		//make popup
 	}
 };
@@ -160,7 +159,6 @@ const addCardExtra = (ev) => {
 		extra.push(card);
 		extraRefresh();
 	} else {
-		console.log("invalid card");
 		//make popup
 	}
 };
