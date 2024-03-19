@@ -11,11 +11,7 @@
 		<link rel="stylesheet" href="lists.css">
 	</head>
 	<body>
-		<header>
-			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
-			<h1>Yugioh Goat Format Deck Builder</h1>
-			<button id="nav-button"><h1>&#9765 Menu</h1></button>  
-		</header>
+		<div id="transparent-overlay"></div>
 		<nav id="main-nav">
 			<button id="close-nav-button"><h1>X</h1></button>
 			<ul id="page-nav">
@@ -27,13 +23,7 @@
 				<a href="events.html"><li><p>Events</p></li></a>
 				<a href="#" id="open-contact"><li><p>Contact Me</p></li></a>
 			</ul>
-			<ul id="account-nav">
-				<li><button id="signup-button">Signup</button></li>
-				<li><button id="login-button">Login</button></li>
-			</ul>
-			<!-- Signed in Account Div Here-->
 		</nav>
-		<div id="transparent-overlay"></div>
 		<div id="contact" class="modal">
 			<div class="modal-content">
 				<h3 class="modal-close"><button id="close-contact">X</button></h3>
@@ -60,10 +50,13 @@
 					<p><button id="contact-submit" type="submit"><h3>Submit</h3></button></p>
 					<p id="contact-result"></p>
 				</form>
-				<!-- Required for hCaptcha -->
-				<script src="https://web3forms.com/client/script.js" async defer></script>
 			</div>
 		</div>
+		<header>
+			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
+			<h1>Yugioh Goat Format Deck Builder</h1>
+			<button id="nav-button"><h1>&#9765 Menu</h1></button>  
+		</header>
 		<main id="flex-override">
 			<div id="main-content">
 				<div id="list-header">
@@ -99,5 +92,7 @@
 		</footer>
 		<script src="script.js"></script>
 		<script src="contact.js"></script>
+		<!-- Required for hCaptcha -->
+		<script src="https://web3forms.com/client/script.js" async defer></script>
 	</body>
 </html>

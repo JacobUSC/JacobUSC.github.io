@@ -1,1 +1,58 @@
-[{}]
+[
+	{
+		"_id": 0,
+		"locationName": "The Pyramids",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.041477146683!2d31.13076976263335!3d29.978237971597352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584587ac8f291b%3A0x810c2f3fa2a52424!2sThe%20Great%20Pyramid%20of%20Giza%20(tomb%20of%20pharaoh%20Khufu)!5e0!3m2!1sen!2sus!4v1707103139524!5m2!1sen!2sus"
+	},
+	{
+		"_id": 1,
+		"locationName": "The Shadow Realm",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6781972.455833891!2d-85.92409069124419!3d33.90227170478555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d91bb06dd5873d%3A0x56ce77c1ef3a9f7c!2sThe%20Shadow%20Realm!5e0!3m2!1sen!2sus!4v1710879322842!5m2!1sen!2sus"
+	},
+	{
+		"_id": 2,
+		"locationName": "Swearingen",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.1250268571475!2d-81.03204692279984!3d33.989322221047445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bad8f7f3702b%3A0xafc6fc171b487f87!2sSwearingen%20Engineering%20Center%2C%20Columbia%2C%20SC%2029201!5e0!3m2!1sen!2sus!4v1710879569814!5m2!1sen!2sus"
+	},
+	{
+		"_id": 3,
+		"locationName": "300 Main",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.613391951772!2d-81.02723761693683!3d33.988848303766076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bad8f641b9e7%3A0xce0a1ae6d15284c9!2sThe%20Department%20of%20Civil%20and%20Environmental%20Engineering%20at%20UofSC!5e0!3m2!1sen!2sus!4v1710879752866!5m2!1sen!2sus"
+	},
+	{
+		"_id": 4,
+		"locationName": "Horizon",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.5854254682804!2d-81.02810535248895!3d33.98972766342194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bad81a29f819%3A0x2e0de28c1d3bfd2b!2sHorizon%20Garage%2C%20Main%20St%2C%20Columbia%2C%20SC%2029201!5e0!3m2!1sen!2sus!4v1710879862737!5m2!1sen!2sus"
+	},
+	{
+		"_id": 5,
+		"locationName": "Inova",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1654.005222755435!2d-81.03192770595162!3d33.99226545818536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bad801f4d29b%3A0xd20f4542068e348d!2sComputer%20Science%20and%20Engineering%20Department!5e0!3m2!1sen!2sus!4v1710879944713!5m2!1sen!2sus"
+	},
+	{
+		"_id": 6,
+		"locationName": "Colonial Life Arena",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1653.9888592645445!2d-81.03670740241623!3d33.99310607102954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bb28ada9ede1%3A0x2ff81595639c7de4!2sColonial%20Life%20Arena!5e0!3m2!1sen!2sus!4v1710879983416!5m2!1sen!2sus"
+	},
+	{
+		"_id": 7,
+		"locationName": "The Atlantic Ocean",
+		"type": "Tournament",
+		"time": 0,
+		"map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65363398.67732795!2d-80.12276364256212!3d-0.7622441361376047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x65a81cae36eb8ff%3A0xa6342257f310534f!2sAtlantic%20Ocean!5e0!3m2!1sen!2sus!4v1710880086875!5m2!1sen!2sus"
+	}
+]

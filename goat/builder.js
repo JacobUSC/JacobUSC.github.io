@@ -10,20 +10,20 @@
  * https://ygoprodeck.com/api-guide/
  */
 
-const deck = [];
-const extra = [];
+let deck = [];
+let extra = [];
 const deckArea = document.getElementById("deck-area");
 const extraArea = document.getElementById("fusion-deck-area");
 
 const deckCheck = (nCard) => {
 	if (nCard == "") return false;
 	if (nCard.type == "Fusion Monster") return false;
-	//fix
-	if ("banlist_info" in nCard) {
-		if (nCard.banlist_info.ban_goat == "Banned") return false;
+	let test = true;
+	try {
+		if (nCard.banlist_info.ban_goat == "Banned") test = false;
 		if (nCard.banlist_info.ban_goat == "Limited") {
 			deck.forEach((dCard) => {
-				if (nCard == dCard) return false;
+				if (nCard == dCard) test = false;
 			});
 		}
 		if (nCard.banlist_info.ban_goat == "Semi-Limited") {
@@ -33,8 +33,13 @@ const deckCheck = (nCard) => {
 					++sOccurrence;
 				}
 			});
-			if (sOccurrence >= 2) return false;
+			if (sOccurrence >= 2) test = false;
 		}
+	} catch {
+		//message
+	}
+	if (test == false) {
+		return false;
 	}
 	let occurrence = 0;
 	deck.forEach((dCard) => {
@@ -71,6 +76,7 @@ const deckRefresh = () => {
 	deck.forEach((card) => {
 		deckArea.append(getDeckCardHTML(card));
 	});
+	updateSize();
 };
 
 const extraRefresh = () => {
@@ -85,6 +91,7 @@ const extraRefresh = () => {
 	extra.forEach((card) => {
 		extraArea.append(getDeckCardHTML(card));
 	});
+	updateSize();
 };
 
 const getDeckCardHTML = (card) => {
@@ -102,6 +109,17 @@ const getDeckCardHTML = (card) => {
 		bigCardDiv.onclick = () => {
 			root.style.setProperty("--show-big-card", "none");
 		};
+	};
+	image.oncontextmenu = (ev) => {
+		ev.preventDefault;
+		if (card.type == "Fusion Monster") {
+			extra.splice(extra.indexOf(card), 1);
+			extraRefresh();
+		} else {
+			deck.splice(deck.indexOf(card), 1);
+			deckRefresh();
+		}
+		return false;
 	};
 	return image;
 };
@@ -124,7 +142,6 @@ const addCardDeck = (ev) => {
 	if (deckCheck(card)) {
 		deck.push(card);
 		deckRefresh();
-		updateSize();
 	} else {
 		console.log("invalid card");
 		//make popup
@@ -146,7 +163,6 @@ const addCardExtra = (ev) => {
 		console.log("invalid card");
 		//make popup
 	}
-	updateSize();
 };
 
 const stopDefault = (ev) => {
@@ -154,11 +170,67 @@ const stopDefault = (ev) => {
 };
 
 const showUpload = () => {
+	const feature = document.getElementById("featured-card");
+	const message = document.getElementById("message");
+	message.innerHTML = "";
+	feature.innerHTML = "";
+	let fCards = [];
+	deck.forEach((card) => {
+		if (!fCards.includes(card)) {
+			fCards.push(card);
+		}
+	});
+	extra.forEach((card) => {
+		if (!fCards.includes(card)) {
+			fCards.push(card);
+		}
+	});
+	fCards.forEach((card) => {
+		const cardOption = document.createElement("option");
+		cardOption.value = card.id;
+		cardOption.innerHTML = card.name;
+		feature.append(cardOption);
+	});
 	root.style.setProperty("--show-upload", "block");
 };
 
 const hideUpload = () => {
 	root.style.setProperty("--show-upload", "none");
+};
+
+const uploadDeck = (ev) => {
+	ev.preventDefault();
+	const message = document.getElementById("message");
+	if (deck.length < 40) {
+		message.innerHTML = "Deck must have at least 40 cards to be valid";
+		return;
+	}
+	let subDeck = [];
+	deck.forEach((card) => {
+		subDeck.push(card.id);
+	});
+	let subExtra = [];
+	extra.forEach((card) => {
+		subExtra.push(card.id);
+	});
+	const deckName = document.getElementById("deck-name").value;
+	const userName = document.getElementById("user-name").value;
+	const email = document.getElementById("user-email").value;
+	const featuredCard = document.getElementById("featured-card").value;
+	const desc = document.getElementById("deck-description").value;
+	console.log(deckName);
+	console.log(userName);
+	console.log(email);
+	console.log(featuredCard);
+	console.log(desc);
+	console.log("Deck cards ids");
+	console.log(subDeck);
+	console.log("Fusion Deck cards ids");
+	console.log(subExtra);
+	message.innerHTML = "Deck successfully submitted";
+	setTimeout(() => {
+		message.innerHTML = "";
+	}, 2000);
 };
 
 deckArea.ondragover = stopDefault;
@@ -167,4 +239,5 @@ extraArea.ondragover = stopDefault;
 extraArea.ondrop = addCardExtra;
 document.getElementById("open-upload").onclick = showUpload;
 document.getElementById("close-upload").onclick = hideUpload;
+document.getElementById("upload-form").onsubmit = uploadDeck;
 updateSize();
