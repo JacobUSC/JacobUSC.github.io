@@ -196,18 +196,18 @@ const hideUpload = () => {
 	root.style.setProperty("--show-upload", "none");
 };
 
-const uploadDeck = (ev) => {
-	ev.preventDefault();
+const uploadDeck = async (event) => {
+	event.preventDefault();
 	const message = document.getElementById("message");
 	if (deck.length < 40) {
 		message.innerHTML = "Deck must have at least 40 cards to be valid";
 		return;
 	}
-	let subDeck = [];
+	let deckIDs = [];
 	deck.forEach((card) => {
 		subDeck.push(card.id);
 	});
-	let subExtra = [];
+	let extraIDs = [];
 	extra.forEach((card) => {
 		subExtra.push(card.id);
 	});
@@ -215,14 +215,22 @@ const uploadDeck = (ev) => {
 	const userName = document.getElementById("user-name").value;
 	const email = document.getElementById("user-email").value;
 	const featuredCard = document.getElementById("featured-card").value;
-	const desc = document.getElementById("deck-description").value;
-	console.log(deckName);
-	console.log(userName);
-	console.log(email);
-	console.log(featuredCard);
-	console.log(desc);
-	console.log(subDeck);
-	console.log(subExtra);
+	const description = document.getElementById("deck-description").value;
+	const id = document.getElementById("").value; //todo
+	const deck = {deckName, userName, email, featuredCard, description, deckIDs, extraIDs};
+	let response;
+	if (id.trim() == "") {
+		response = await fetch("https://goat-server.onrender.com/api/decks", {
+			method: "POST",
+			body: deck
+		});
+	} else {
+		response = await fetch("https://goat-server.onrender.com/api/decks", {
+			method: "PUT",
+			body: deck
+		});
+	}
+	//error messages;
 	message.innerHTML = "Deck successfully submitted";
 	setTimeout(() => {
 		message.innerHTML = "";
