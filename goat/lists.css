@@ -1,6 +1,11 @@
 /* Author: Jacob Russell */
 /* CSS for The Deck List page */
 /* lists.html */
+
+:root {
+	--show-deck: none;
+}
+
 #list-header {
 	background: var(--yami-color2);
 	display: flex;
