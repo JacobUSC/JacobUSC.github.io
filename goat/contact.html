@@ -8,7 +8,7 @@
 		<link rel="icon" type="image/x-icon" href="images/favicon.png">
 		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="nav.css">
-		<link rel="stylesheet" href="lists.css">
+		<link rel="contact" href="contact.css">
 	</head>
 	<body>
 		<div id="transparent-overlay"></div>
@@ -24,9 +24,13 @@
 				<a href="#" id="open-contact"><li><p>Contact Me</p></li></a>
 			</ul>
 		</nav>
-		<div id="contact" class="modal">
-			<div class="modal-content">
-				<h3 class="modal-close"><button id="close-contact">X</button></h3>
+		<header>
+			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
+			<h1>Yugioh Goat Format Deck Builder</h1>
+			<button id="nav-button"><h1>&#9765 Menu</h1></button>  
+		</header>
+		<main>
+			<div class="contact">
 				<h2>Contact Me</h2>
 				<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
 					<input type="hidden" name="access_key" value="b111c222-04d8-45d5-bb73-3fabe00a7161">
@@ -51,54 +55,14 @@
 					<p id="contact-result"></p>
 				</form>
 			</div>
-		</div>
-		<div id="deck-modal" class="modal">
-			<div id="deck-view" class="modal-content">
-				<!-- Deck Info Goes Here -->
-			</div>
-		</div>
-		<header>
-			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
-			<h1>Yugioh Goat Format Deck Builder</h1>
-			<button id="nav-button"><h1>&#9765 Menu</h1></button>  
-		</header>
-		<main id="flex-override">
-			<div id="main-content">
-				<div id="list-header">
-					<h2>Deck Lists</h2>
-					<button id="search-button"><h1>&#128270</h1></button>
-				</div>
-				<div id="list-area">
-					<section class="deck-list">
-						<h3>Deck List</h3>
-						<h4>By [NAME]</h4>
-						<img src="images/cards/98502113.jpg" class="deck-list-card">
-						<p>This is a user description of there deck. THis should explain why certain cards are in the deck. This should also explain things like card combos, the mechanics of the deck, and what kind of strategy is used to play the deck properly.</p>
-					</section>
-					<section class="deck-list">
-						<h3>Deck List</h3>
-						<h4>By [NAME]</h4>
-						<img src="images/cards/98502113.jpg" class="deck-list-card">
-						<p>This is a user description of there deck. THis should explain why certain cards are in the deck. This should also explain things like card combos, the mechanics of the deck, and what kind of strategy is used to play the deck properly.</p>
-					</section>
-					<section class="deck-list">
-						<h3>Deck List</h3>
-						<h4>By [NAME]</h4>
-						<img src="images/cards/98502113.jpg" class="deck-list-card">
-						<p>This is a user description of there deck. THis should explain why certain cards are in the deck. This should also explain things like card combos, the mechanics of the deck, and what kind of strategy is used to play the deck properly.</p>
-					</section>
-				</div>
-			</div>
 		</main>
 		<footer>
 			<p>The literal and graphical information presented on this site about Yu-Gi-Oh!, including card images, the attribute, level/rank and type symbols, and card text, is copyright 4K Media Inc, a subsidiary of Konami Digital Entertainment, Inc. This website is not produced by, endorsed by, supported by, or affiliated with 4k Media or Konami Digital Entertainment.</p>
 			<p><a href="https://ygoprodeck.com/">Card Images from YGOPRODeck</a></p>
 			<p>All other content &#169; 2024 Jacob Russell</p>
 		</footer>
-		<script src="script.js"></script>
-		<script src="contact.js"></script>
-		<script src="lists.js"></script>
 		<!-- Required for hCaptcha -->
 		<script src="https://web3forms.com/client/script.js" async defer></script>
+		<script src="contact.js"></script>
 	</body>
 </html>

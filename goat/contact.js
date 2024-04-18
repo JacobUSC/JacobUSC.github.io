@@ -1,7 +1,7 @@
 /**
  * Author: Jacob Russell
  * Description: Contact Me Form
- * For: Every Pages
+ * For: contact.html
  */
 
 const showContact = (e) => {
