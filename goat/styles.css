@@ -1,6 +1,7 @@
 /* Author: Jacob Russell */
 /* CSS for every page */
 /* every page */
+
 :root {
 	/* Colors */
 	--yami-color1: black;
@@ -17,7 +18,6 @@
 	/* Display Elements Variables */
 	--menu: none;
 	--show-overlay: none;
-	--show-contact: none;
 }
 
 body {
@@ -56,6 +56,14 @@ main {
 footer {
 	background: var(--yami-color1);
 	padding: 10px;
+}
+
+.center-wrapper {
+	text-align: center;
+}
+
+.right-wrapper {
+	text-align: right;
 }
 
 /* Images */
@@ -112,35 +120,6 @@ footer {
 	margin-right: 5px;
 	font-size: 1em;
 	border-radius: 25px;
-}
-
-/* Contact Me */
-
-#contact {
-	display: var(--show-contact);
-}
-
-#contact h2 {
-	text-align: center;
-}
-
-#contact p {
-	margin: auto;
-	margin-bottom: 25px;
-	text-align: center;
-}
-
-.h-captcha {
-	margin: auto;
-	text-align: center;
-}
-
-#contact-submit {
-}
-
-#contact-submit h3 {
-	padding: none;
-	margin: none;
 }
 
 /* Typography */

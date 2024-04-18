@@ -4,18 +4,6 @@
  * For: contact.html
  */
 
-const showContact = (e) => {
-	e.preventDefault();
-	root.style.setProperty("--menu", "none");
-	showOverlay();
-	root.style.setProperty("--show-contact", "block");
-};
-
-const closeContact = () => {
-	root.style.setProperty("--show-contact", "none");
-	root.style.setProperty("--show-overlay", "none");
-};
-
 const showEmailResult = async (e) => {
 	e.preventDefault();
 	const result = document.getElementById("contact-result");

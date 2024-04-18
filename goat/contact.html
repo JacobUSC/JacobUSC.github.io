@@ -3,12 +3,12 @@
 	<head>
 		<!-- Author: Jacob Russell -->
 		<!-- Semester Project CSCE 242-001 -->
-		<!-- Deck Lists Page -->
+		<!-- Contact Page -->
 		<title>Yugioh Goat Format Deck Builder</title>
 		<link rel="icon" type="image/x-icon" href="images/favicon.png">
 		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="nav.css">
-		<link rel="contact" href="contact.css">
+		<link rel="stylesheet" href="contact.css">
 	</head>
 	<body>
 		<div id="transparent-overlay"></div>
@@ -18,10 +18,10 @@
 				<a href="index.html"><li><p>Home</p></li></a>
 				<a href="help.html"><li><p>Help</p></li></a>
 				<a href="builder.html"><li><p>Deck Builder</p></li></a>
-				<a href="#"><li><p>Deck Lists</p></li></a>
+				<a href="lists.html"><li><p>Deck Lists</p></li></a>
 				<a href="cards.html"><li><p>Card List</p></li></a>
 				<a href="events.html"><li><p>Events</p></li></a>
-				<a href="#" id="open-contact"><li><p>Contact Me</p></li></a>
+				<a href="#"><li><p>Contact Me</p></li></a>
 			</ul>
 		</nav>
 		<header>
@@ -30,8 +30,8 @@
 			<button id="nav-button"><h1>&#9765 Menu</h1></button>  
 		</header>
 		<main>
-			<div class="contact">
-				<h2>Contact Me</h2>
+			<div id="contact">
+				<h1>Contact Me</h1>
 				<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
 					<input type="hidden" name="access_key" value="b111c222-04d8-45d5-bb73-3fabe00a7161">
 					<p>
@@ -51,7 +51,7 @@
 					<input type="hidden" name="redirect" value="https://web3forms.com/success"/>
 					<input type="hidden" name="subject" value="Contact from Goat Deck Builder Website"/>
 					<input type="hidden" name="from_name" value="My Website" />
-					<p><button id="contact-submit" type="submit"><h3>Submit</h3></button></p>
+					<p><button id="contact-submit" type="submit"><h2>Submit</h2></button></p>
 					<p id="contact-result"></p>
 				</form>
 			</div>
@@ -61,6 +61,7 @@
 			<p><a href="https://ygoprodeck.com/">Card Images from YGOPRODeck</a></p>
 			<p>All other content &#169; 2024 Jacob Russell</p>
 		</footer>
+		<script src="script.js"></script>
 		<!-- Required for hCaptcha -->
 		<script src="https://web3forms.com/client/script.js" async defer></script>
 		<script src="contact.js"></script>

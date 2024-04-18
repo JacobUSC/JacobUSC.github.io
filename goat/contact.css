@@ -1,0 +1,45 @@
+/* Author: Jacob Russell */
+/* CSS for The Contact page */
+/* builder.html */
+
+#contact {
+	background: var(--yami-color3);
+    margin: auto;
+    border-radius: 25px;
+	padding: 5px;
+}
+
+#contact h1 {
+	text-align: center;
+}
+
+#contact p {
+	margin: auto;
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.h-captcha {
+	margin: auto;
+	text-align: center;
+}
+
+#contact-submit {
+    border: solid 1px var(--yami-color1);
+	width: 150px;
+	height: 50px;
+	border-radius: 10px;
+}
+
+#contact-submit h2 {
+    color: var(--yami-color1);
+}
+
+#contact-submit:hover {
+    border: solid 1px var(--yami-color4);
+    background: var(--yami-color5);
+}
+
+#contact-submit:hover h2 {
+    color: var(--yami-color3);
+}

@@ -11,7 +11,7 @@ const getDecks = async () => {
 		return (await fetch("https://goat-server.onrender.com/api/decks")).json();
 	} catch (error) {
 		console.log(error);
-		return "";
+		return 0;
 	}
 }
 
@@ -119,9 +119,13 @@ const showDecks = async (range) => {
 	const decksJSON = await getDecks();
 	const deckArea = document.getElementById("list-area");
 	deckArea.innerHTML = "";
-	deckArea.append(getDeck(decksJSON[range]));
-	deckArea.append(getDeck(decksJSON[++range]));
-	deckArea.append(getDeck(decksJSON[++range]));
+	if (decksJSON == 0) {
+		deckArea.innerHTML = "error no decks found";
+	} else {
+		deckArea.append(getDeck(decksJSON[range]));
+		deckArea.append(getDeck(decksJSON[++range]));
+		deckArea.append(getDeck(decksJSON[++range]));
+	}
 };
 
 const nextPage = () => {
@@ -129,9 +133,18 @@ const nextPage = () => {
 	showDecks(currentRange);
 };
 
-const prevPage = () => {
+const previousPage = () => {
 	currentRange = currentRange + 3;
 	showDecks(currentRange);
 };
 
+const openSearch = () => {};
+
+const search = () => {};
+
+const closeSearch = () => {};
+
 showDecks(currentRange);
+document.getElementById("next-button").onclick = nextPage;
+document.getElementById("previous-button").onclick = previousPage;
+document.getElementById("search-button").onclick = openSearch;

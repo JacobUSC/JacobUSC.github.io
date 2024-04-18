@@ -33,6 +33,18 @@
 	width: 25%;
 }
 
+#deck-modal {
+	display: var(--show-deck);
+}
+
+#deck-view {
+	display: var(--show-deck);
+}
+
+#page-arrows {
+	display: flex;
+}
+
 /* larger Screens*/
 
 @media only screen and (min-width: 768px) {
