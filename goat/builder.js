@@ -168,7 +168,7 @@ const stopDefault = (ev) => {
 };
 
 const showUpload = () => {
-	const feature = document.getElementById("featured-card");
+	const feature = document.getElementById("featuredCard");
 	const message = document.getElementById("message");
 	message.innerHTML = "";
 	feature.innerHTML = "";
@@ -205,37 +205,43 @@ const uploadDeck = async (event) => {
 	}
 	let deckIDs = [];
 	deck.forEach((card) => {
-		subDeck.push(card.id);
+		deckIDs.push(card.id);
 	});
 	let extraIDs = [];
 	extra.forEach((card) => {
-		subExtra.push(card.id);
+		extraIDs.push(card.id);
 	});
-	const deckName = document.getElementById("deck-name").value;
-	const userName = document.getElementById("user-name").value;
-	const email = document.getElementById("user-email").value;
-	const featuredCard = document.getElementById("featured-card").value;
-	const description = document.getElementById("deck-description").value;
-	const id = document.getElementById("").value; //todo
-	const deck = {deckName, userName, email, featuredCard, description, deckIDs, extraIDs};
+	const id = document.getElementById("_id").value;
+	const deckName = document.getElementById("deckName").value;
+	const userName = document.getElementById("userName").value;
+	const email = document.getElementById("email").value;
+	const featuredCard = document.getElementById("featuredCard").value;
+	const description = document.getElementById("description").value;
+	const submitDeck = JSON.stringify({deckName, userName, email, featuredCard, description, deck: deckIDs, extra: extraIDs});
 	let response;
 	if (id.trim() == "") {
 		response = await fetch("https://goat-server.onrender.com/api/decks", {
 			method: "POST",
-			body: deck
+			headers:{"Content-Type":"application/json;charset=utf-8"},
+			body: submitDeck
 		});
 	} else {
-		response = await fetch("https://goat-server.onrender.com/api/decks", {
+		response = await fetch("https://goat-server.onrender.com/api/decks/" + id, {
 			method: "PUT",
-			body: deck
+			body: submitDeck
 		});
 	}
-	//error messages;
-	message.innerHTML = "Deck successfully submitted";
-	setTimeout(() => {
-		message.innerHTML = "";
-		hideUpload();
-	}, 2000);
+	//error messages
+	if (response != 200) {
+		message.innerHTML = "error submitting deck"
+	} else {
+		message.innerHTML = "Deck successfully submitted";
+		setTimeout(() => {
+			message.innerHTML = "";
+			hideUpload();
+		}, 2000);
+	}
+	
 };
 
 deckArea.ondragover = stopDefault;
