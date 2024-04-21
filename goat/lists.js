@@ -5,6 +5,7 @@
  */
 
 let currentRange = 0;
+let currentPage = 1;
 
 const getDecks = async () => {
 	try {
@@ -26,7 +27,7 @@ const getDeck = (deck) => {
 	section.append(nameH4);
 	const featuredCardImg = document.createElement("img");
 	featuredCardImg.classList.add("deck-list-card");
-	featuredCardImg.src = `images/cards-hd/${deck.featuredCardImg}.jpg`;
+	featuredCardImg.src = `images/cards-hd/${deck.featuredCard}.jpg`;
 	section.append(featuredCardImg);
 	const descriptionP = document.createElement("p");
 	descriptionP.innerHTML = deck.description;
@@ -35,22 +36,23 @@ const getDeck = (deck) => {
 		event.preventDefault();
 		const deckView = document.getElementById("deck-view");
 		deckView.innerHTML = "";
-		const closeButtonWrapper = document.createElement("div");
-		closeButtonWrapper.id = "close-button-wrapper";
+		const closeButtonWrapper = document.createElement("p");
+		closeButtonWrapper.classList.add("modal-close");
 		const closeButton = document.createElement("button");
 		closeButton.innerHTML = "X";
 		closeButton.onclick = () => {
-			//todo
+			root.style.setProperty("--show-deck", "none");
 			deckView.innerHTML = "";
 		};
 		closeButtonWrapper.append(closeButton);
 		deckView.append(closeButtonWrapper);
 		const headerWrapper = document.createElement("div");
-		const titleH2 = document.createElement("h2");
+		headerWrapper.id = "deck-header";
+		const titleH2 = document.createElement("h1");
 		titleH2.innerHTML = deck.deckName;
 		headerWrapper.append(titleH2);
 		const infoButton = document.createElement("button");
-		infoButton.innerHTML = "";
+		infoButton.innerHTML = "&#9432;";
 		infoButton.onclick = (event) => {
 			event.preventDefault();
 			//title
@@ -81,15 +83,16 @@ const getDeck = (deck) => {
 			}
 			let result = await response.json();
 			showDecks(currentRange);
-			//close
+			root.style.setProperty("--show-deck", "none");
 		};
 		headerWrapper.append(deleteButton);
 		deckView.append(headerWrapper);
 		const deckArea = document.createElement("div");
+		deckArea.id = "deck-area";
 		deck.deck.forEach(card => {
 			const cardImage = document.createElement("img");
 			cardImage.src = `images/cards/${card}.jpg`;
-			cardImage.classList.add(""); //todo
+			cardImage.classList.add("deck-card");
 			cardImage.onclick = (event) => {
 				event.preventDefault();
 				//popup card
@@ -98,11 +101,12 @@ const getDeck = (deck) => {
 		});
 		deckView.append(deckArea);
 		const extraArea = document.createElement("div");
+		extraArea.id = "extra-area";
 		if (!(deck.extra === undefined) || !(deck.extra == 0)) {
 			deck.extra.forEach(card => {
 			const cardImage = document.createElement("img");
 			cardImage.src = `images/cards/${card}.jpg`;
-			cardImage.classList.add(""); //todo
+			cardImage.classList.add("deck-card");
 			cardImage.onclick = (event) => {
 				event.preventDefault();
 				//popup card
@@ -111,30 +115,55 @@ const getDeck = (deck) => {
 			});
 		}
 		deckView.append(extraArea);
+		root.style.setProperty("--show-deck", "block");
 	};
 	return section;
 };
 
 const showDecks = async (range) => {
+	if (range < 0) return;
 	const decksJSON = await getDecks();
 	const deckArea = document.getElementById("list-area");
 	deckArea.innerHTML = "";
 	if (decksJSON == 0) {
 		deckArea.innerHTML = "error no decks found";
 	} else {
+		try {
 		deckArea.append(getDeck(decksJSON[range]));
+		} catch {
+			previousPage();
+			return;
+		}
+		try {
 		deckArea.append(getDeck(decksJSON[++range]));
+		} catch {
+			return;
+		}
+		try {
 		deckArea.append(getDeck(decksJSON[++range]));
+		} catch {
+			return;
+		}
 	}
 };
 
 const nextPage = () => {
 	currentRange = currentRange + 3;
+	const pageNumber = document.getElementById("page-number");
+	++currentPage;
+	pageNumber.innerHTML = `Page ${currentPage}`;
 	showDecks(currentRange);
 };
 
 const previousPage = () => {
-	currentRange = currentRange + 3;
+	currentRange = currentRange - 3;
+	if (currentRange < 0) {
+		currentRange = 0;
+		return;
+	}
+	const pageNumber = document.getElementById("page-number");
+	--currentPage;
+	pageNumber.innerHTML = `Page ${currentPage}`;
 	showDecks(currentRange);
 };
 

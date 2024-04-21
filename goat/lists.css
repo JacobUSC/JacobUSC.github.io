@@ -39,11 +39,58 @@
 
 #deck-view {
 	display: var(--show-deck);
+	width: 90%;
 }
 
 #page-arrows {
 	display: flex;
 }
+
+/* Deck View */
+
+#close-button-wrapper {
+	text-align: right;
+	
+}
+
+#deck-header {
+	display: flex;
+	font-family: var(--style-fonts);
+}
+
+#deck-header h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 25px;
+	margin-left: 10px;
+}
+
+#deck-header button {
+	font-size: 2em;
+	background: none;
+	border: none;
+	margin-left: 15px;
+}
+
+#deck-area {
+	display: flex;
+	flex-wrap: wrap;
+	width: 99%;
+	margin: auto;
+}
+
+#extra-area {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.deck-card {
+	width: 100px;
+	height: auto;
+	margin: auto;
+	margin-bottom: 2px;
+}
+
 
 /* larger Screens*/
 

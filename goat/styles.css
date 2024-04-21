@@ -113,6 +113,7 @@ footer {
 
 .modal-close {
 	text-align: right;
+	margin-bottom: 0;
 }
 
 .modal-close button {
