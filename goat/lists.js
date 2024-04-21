@@ -73,7 +73,7 @@ const getDeck = (deck) => {
 		deleteButton.innerHTML = "&#128465;";
 		deleteButton.onclick = async (event) => {
 			event.preventDefault();
-			let response = await fetch('https://goat-server.onrender.com/api/decks/${deck._id}', {
+			let response = await fetch(`https://goat-server.onrender.com/api/decks/${deck._id}`, {
 				method:"DELETE",
 				headers:{"Content-Type":"application/json;charset=utf-8"}
 			});
