@@ -262,10 +262,17 @@ const uploadDeck = async (event) => {
 		message.innerHTML = "Deck successfully submitted";
 		setTimeout(() => {
 			message.innerHTML = "";
-			hideUpload();
+			window.location.href = "lists.html";
 		}, 2000);
 	}
-	
+};
+
+const initDeck = () => {
+	const queryString = decodeURIComponent(window.location.search);
+	if (queryString == "") {
+		return;
+	}
+	console.log(queryString);
 };
 
 deckArea.ondragover = stopDefault;
@@ -276,3 +283,4 @@ document.getElementById("open-upload").onclick = showUpload;
 document.getElementById("close-upload").onclick = hideUpload;
 document.getElementById("upload-form").onsubmit = uploadDeck;
 updateSize();
+initDeck();

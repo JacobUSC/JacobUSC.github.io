@@ -66,7 +66,8 @@ const getDeck = (deck) => {
 		editButton.innerHTML = "&#9998;";
 		editButton.onclick = (event) => {
 			event.preventDefault();
-			//open editor with deck
+			const queryString = "?para1=" + deck._id;
+			window.location.href = "builder.html" + queryString;
 		}
 		headerWrapper.append(editButton);
 		deleteButton = document.createElement("button");
