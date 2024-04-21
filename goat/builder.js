@@ -256,7 +256,7 @@ const uploadDeck = async (event) => {
 		});
 	}
 	console.log(response);
-	if (response != 200) {
+	if (response.status != 200) {
 		message.innerHTML = "error submitting deck"
 	} else {
 		message.innerHTML = "Deck successfully submitted";
