@@ -23,7 +23,7 @@ const getDeck = (deck) => {
 	titleH3.innerHTML = deck.deckName;
 	section.append(titleH3);
 	const nameH4 = document.createElement("h4");
-	nameH4.innerHTML = deck.userName;
+	nameH4.innerHTML = `Created By ${deck.userName}`;
 	section.append(nameH4);
 	const featuredCardImg = document.createElement("img");
 	featuredCardImg.classList.add("deck-list-card");
@@ -78,7 +78,7 @@ const getDeck = (deck) => {
 				headers:{"Content-Type":"application/json;charset=utf-8"}
 			});
 			if (response.status != 200) {
-				//error message
+				window.alert("Error Deleting Deck");
 				return;
 			}
 			let result = await response.json();
@@ -111,7 +111,7 @@ const getDeck = (deck) => {
 				event.preventDefault();
 				//popup card
 			};
-			deckArea.append(cardImage);
+			extraArea.append(cardImage);
 			});
 		}
 		deckView.append(extraArea);

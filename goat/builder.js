@@ -16,14 +16,26 @@ const deckArea = document.getElementById("deck-area");
 const extraArea = document.getElementById("fusion-deck-area");
 
 const deckCheck = (nCard) => {
-	if (nCard == "") return false;
-	if (nCard.type == "Fusion Monster") return false;
+	if (nCard == "") {
+		window.alert("Error Invalid Card");
+		return false;
+	}
+	if (nCard.type == "Fusion Monster") {
+		window.alert("Cannot Add Fusion Monster To Main Deck");
+		return false;
+	}
 	let test = true;
 	try {
-		if (nCard.banlist_info.ban_goat == "Banned") test = false;
+		if (nCard.banlist_info.ban_goat == "Banned") {
+			window.alert("Card is Banned");
+			test = false;
+		}
 		if (nCard.banlist_info.ban_goat == "Limited") {
 			deck.forEach((dCard) => {
-				if (nCard == dCard) test = false;
+				if (nCard == dCard) {
+					window.alert("Card is Limited to 1 per deck");
+					test = false;
+				}
 			});
 		}
 		if (nCard.banlist_info.ban_goat == "Semi-Limited") {
@@ -33,10 +45,14 @@ const deckCheck = (nCard) => {
 					++sOccurrence;
 				}
 			});
-			if (sOccurrence >= 2) test = false;
+			if (sOccurrence >= 2) {
+				window.alert("Card is Limited to 2 per deck");
+				test = false;
+			}
 		}
 	} catch {
-		//message
+		// This needs to do nothing
+		// The api I read the card data from only has the banlist_info on cards that are on the ban list, non ban list cards do not have this
 	}
 	if (test == false) {
 		return false;
@@ -47,20 +63,32 @@ const deckCheck = (nCard) => {
 			++occurrence;
 		}
 	});
-	if (occurrence >= 3) return false;
+	if (occurrence >= 3) {
+		window.alert("There is already the maximum amount(3) of this card in the deck");
+		return false;
+	}
 	return true;
 };
 
 const extraCheck = (nCard) => {
-	if (nCard == "") return false;
-	if (nCard.type != "Fusion Monster") return false;
+	if (nCard == "") {
+		window.alert("Error Invalid Card");
+		return false;
+	}
+	if (nCard.type != "Fusion Monster") {
+		window.alert("Cannot Add non-Fusion Monster to the Fusion Deck");
+		return false;
+	}
 	let occurrence = 0;
 	extra.forEach((dCard) => {
 		if (nCard == dCard) {
 			++occurrence;
 		}
 	});
-	if (occurrence >= 3) return false;
+	if (occurrence >= 3) {
+		window.alert("There is already the maximum amount(3) of this card in the deck");
+		return false;
+	}
 	return true;
 };
 
@@ -142,8 +170,6 @@ const addCardDeck = (ev) => {
 	if (deckCheck(card)) {
 		deck.push(card);
 		deckRefresh();
-	} else {
-		//make popup
 	}
 };
 
@@ -158,8 +184,6 @@ const addCardExtra = (ev) => {
 	if (extraCheck(card)) {
 		extra.push(card);
 		extraRefresh();
-	} else {
-		//make popup
 	}
 };
 
@@ -231,7 +255,7 @@ const uploadDeck = async (event) => {
 			body: submitDeck
 		});
 	}
-	//error messages
+	console.log(response);
 	if (response != 200) {
 		message.innerHTML = "error submitting deck"
 	} else {

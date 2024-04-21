@@ -94,7 +94,6 @@ const filter = (e) => {
 	const minDef = form.elements["def-min"].value;
 	cards.forEach((card) => {
 		if (search != "") {
-			//better search logic
 			if (!card.name.toLowerCase().includes(search) && !card.desc.toLowerCase().includes(search)) return;
 		}
 		if (cardType != "None") {
@@ -115,7 +114,6 @@ const filter = (e) => {
 	});
 	if (cardsSorted.length == 0) {
 		window.alert("Invalid Filter Criteria");
-		//make popup
 	} else {
 		cardsSorted.forEach((card) => {
 			cardList.append(getCardHTML(card));
