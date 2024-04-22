@@ -307,12 +307,8 @@ const checkParams = async () => {
 		return;
 	}
 	id = queryString.substring(7);
-	try {
-		initDeck((await fetch(`https://goat-server.onrender.com/api/decks/${id}`)).json());
-	} catch (error) {
-		console.log(error);
-		window.alert("Error Loading Deck");
-	}
+	const deckGet = (await fetch(`https://goat-server.onrender.com/api/decks/${id}`)).json()
+	initDeck(deckGet);
 };
 
 
