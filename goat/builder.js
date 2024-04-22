@@ -307,6 +307,10 @@ const initDeck = async (deckGet) => {
 		});
 	});
 	updateSize();
+	// this fixes an issue where the deck doesn't load
+	if (deck.length == 0) {
+		location.reload();
+	}
 };
 
 const checkParams = async () => {
