@@ -279,7 +279,7 @@ const getDeckFromDB = async (id) => {
 
 const initDeck = async (deckGet) => {
 	console.log(deckGet);
-	document.getElementById("_id").value = deckGet.id;
+	document.getElementById("_id").value = deckGet._id;
 	document.getElementById("deckName").value = deckGet.deckName;
 	document.getElementById("userName").value = deckGet.userName;
 	document.getElementById("email").value = deckGet.email;
