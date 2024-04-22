@@ -252,6 +252,7 @@ const uploadDeck = async (event) => {
 	} else {
 		response = await fetch("https://goat-server.onrender.com/api/decks/" + id, {
 			method: "PUT",
+			headers:{"Content-Type":"application/json;charset=utf-8"},
 			body: submitDeck
 		});
 	}
