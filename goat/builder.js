@@ -267,6 +267,15 @@ const uploadDeck = async (event) => {
 	}
 };
 
+const getDeckFromDB = async (id) => {
+	try {
+		return (await fetch(`https://goat-server.onrender.com/api/decks/${id}`)).json()
+	} catch (error) {
+		console.log(error);
+		return 0;
+	}
+};
+
 const initDeck = async (deckGet) => {
 	console.log(deckGet);
 	document.getElementById("_id").value = deckGet.id;
@@ -307,7 +316,7 @@ const checkParams = async () => {
 		return;
 	}
 	id = queryString.substring(7);
-	const deckGet = (await fetch(`https://goat-server.onrender.com/api/decks/${id}`)).json()
+	const deckGet = await getDeckFromDB(id);
 	initDeck(deckGet);
 };
 
