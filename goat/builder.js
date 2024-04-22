@@ -274,10 +274,30 @@ const initDeck = async (deckGet) => {
 	document.getElementById("email").value = deckGet.email;
 	document.getElementById("featuredCard").value = deckGet.featuredCard;
 	document.getElementById("description").value = deckGet.description;
-	deck = deckGet.deck;
-	extra = deckGet.extra;
-	deckRefresh();
-	extraRefresh();
+	deckGet.deck.forEach((cardID) => {
+		let card = "";
+		cards.forEach((cCard) => {
+			if (cCard.id == cardID) {
+				card = cCard;
+			}
+		});
+		if (deckCheck(card)) {
+			deck.push(card);
+			deckRefresh();
+		}
+	});
+	deckGet.extra.forEach((cardID) => {
+		let card = "";
+		cards.forEach((cCard) => {
+			if (cCard.id == cardID) {
+				card = cCard;
+			}
+		});
+		if (extraCheck(card)) {
+			extra.push(card);
+			extraRefresh();
+		}
+	});
 };
 
 const checkParams = async () => {
