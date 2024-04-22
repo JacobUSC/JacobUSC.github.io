@@ -273,6 +273,8 @@ const initDeck = () => {
 		return;
 	}
 	console.log(queryString);
+	id = queryString.substring(1);
+	console.log(id);
 };
 
 deckArea.ondragover = stopDefault;
