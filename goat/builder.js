@@ -267,15 +267,34 @@ const uploadDeck = async (event) => {
 	}
 };
 
-const initDeck = () => {
+const initDeck = (deck) => {
+	console.log(deck);
+};
+
+const checkParams = async () => {
 	const queryString = decodeURIComponent(window.location.search);
 	if (queryString == "") {
 		return;
 	}
 	console.log(queryString);
-	id = queryString.substring(1);
+	id = queryString.substring(7);
 	console.log(id);
+	let decks;
+	try {
+		decks = (await fetch("https://goat-server.onrender.com/api/decks")).json();
+	} catch (error) {
+		console.log(error);
+	}
+	decks.forEach((deck) => {
+		if (deck._id == id) {
+			initDeck(deck);
+			return;
+		}
+	});
+	
 };
+
+
 
 deckArea.ondragover = stopDefault;
 deckArea.ondrop = addCardDeck;
@@ -285,4 +304,4 @@ document.getElementById("open-upload").onclick = showUpload;
 document.getElementById("close-upload").onclick = hideUpload;
 document.getElementById("upload-form").onsubmit = uploadDeck;
 updateSize();
-initDeck();
+checkParams();
