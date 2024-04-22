@@ -267,7 +267,7 @@ const uploadDeck = async (event) => {
 	}
 };
 
-const initDeck = (deckGet) => {
+const initDeck = async (deckGet) => {
 	document.getElementById("_id").value = deckGet.id;
 	document.getElementById("deckName").value = deckGet.deckName;
 	document.getElementById("userName").value = deckGet.userName;
