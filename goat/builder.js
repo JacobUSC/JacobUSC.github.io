@@ -279,19 +279,12 @@ const checkParams = async () => {
 	console.log(queryString);
 	id = queryString.substring(7);
 	console.log(id);
-	let decks;
 	try {
-		decks = (await fetch("https://goat-server.onrender.com/api/decks")).json();
+		const deck = (await fetch(`https://goat-server.onrender.com/api/decks/${id}`)).json();
+		initDeck(deck);
 	} catch (error) {
 		console.log(error);
 	}
-	decks.forEach((deck) => {
-		if (deck._id == id) {
-			initDeck(deck);
-			return;
-		}
-	});
-	
 };
 
 
