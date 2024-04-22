@@ -267,8 +267,17 @@ const uploadDeck = async (event) => {
 	}
 };
 
-const initDeck = (deck) => {
-	console.log(deck);
+const initDeck = (deckGet) => {
+	document.getElementById("_id").value = deckGet.id;
+	document.getElementById("deckName").value = deckGet.deckName;
+	document.getElementById("userName").value = deckGet.userName;
+	document.getElementById("email").value = deckGet.email;
+	document.getElementById("featuredCard").value = deckGet.featuredCard;
+	document.getElementById("description").value = deckGet.description;
+	deck = deckGet.deck;
+	extra = deckGet.extra;
+	deckRefresh();
+	extraRefresh();
 };
 
 const checkParams = async () => {
@@ -276,14 +285,12 @@ const checkParams = async () => {
 	if (queryString == "") {
 		return;
 	}
-	console.log(queryString);
 	id = queryString.substring(7);
-	console.log(id);
 	try {
-		const deck = (await fetch(`https://goat-server.onrender.com/api/decks/${id}`)).json();
-		initDeck(deck);
+		const deckGet = (await fetch(`https://goat-server.onrender.com/api/decks/${id}`)).json();
+		initDeck(deckGet);
 	} catch (error) {
-		console.log(error);
+		window.alert(error);
 	}
 };
 
