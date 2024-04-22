@@ -16,24 +16,26 @@ const deckArea = document.getElementById("deck-area");
 const extraArea = document.getElementById("fusion-deck-area");
 
 const deckCheck = (nCard) => {
+	const error = document.getElementById("deck-error");
+	error.innerHTML = "";
 	if (nCard == "") {
-		window.alert("Error Invalid Card");
+		error.innerHTML = "Error Invalid Card";
 		return false;
 	}
 	if (nCard.type == "Fusion Monster") {
-		window.alert("Cannot Add Fusion Monster To Main Deck");
+		error.innerHTML = "Cannot Add Fusion Monster To Main Deck";
 		return false;
 	}
 	let test = true;
 	try {
 		if (nCard.banlist_info.ban_goat == "Banned") {
-			window.alert("Card is Banned");
+			error.innerHTML = "Card is Banned";
 			test = false;
 		}
 		if (nCard.banlist_info.ban_goat == "Limited") {
 			deck.forEach((dCard) => {
 				if (nCard == dCard) {
-					window.alert("Card is Limited to 1 per deck");
+					error.innerHTML = "Card is Limited to 1 per deck";
 					test = false;
 				}
 			});
@@ -46,7 +48,7 @@ const deckCheck = (nCard) => {
 				}
 			});
 			if (sOccurrence >= 2) {
-				window.alert("Card is Limited to 2 per deck");
+				error.innerHTML = "Card is Limited to 2 per deck";
 				test = false;
 			}
 		}
@@ -64,7 +66,7 @@ const deckCheck = (nCard) => {
 		}
 	});
 	if (occurrence >= 3) {
-		window.alert("There is already the maximum amount(3) of this card in the deck");
+		error.innerHTML = "There is already the maximum amount(3) of this card in the deck";
 		return false;
 	}
 	return true;
@@ -278,7 +280,6 @@ const getDeckFromDB = async (id) => {
 };
 
 const initDeck = async (deckGet) => {
-	console.log(deckGet);
 	document.getElementById("_id").value = deckGet._id;
 	document.getElementById("deckName").value = deckGet.deckName;
 	document.getElementById("userName").value = deckGet.userName;
@@ -290,21 +291,22 @@ const initDeck = async (deckGet) => {
 			if (cardID == card.id) {
 				if (deckCheck(card)) {
 					deck.push(card);
+					deckRefresh();
 				}
 			};
 		});
 	});
-	deckRefresh();
 	deckGet.extra.forEach((cardID) => {
 		cards.forEach((card) => {
 			if (cardID == card.id) {
 				if (extraCheck(card)) {
 					extra.push(card);
+					extraRefresh();
 				}
 			};
 		});
 	});
-	extraRefresh();
+	updateSize();
 };
 
 const checkParams = async () => {

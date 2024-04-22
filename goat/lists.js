@@ -6,6 +6,7 @@
 
 let currentRange = 0;
 let currentPage = 1;
+let searchDecks = [];
 
 const getDecks = async () => {
 	try {
@@ -55,11 +56,7 @@ const getDeck = (deck) => {
 		infoButton.innerHTML = "&#9432;";
 		infoButton.onclick = (event) => {
 			event.preventDefault();
-			//title
-			//username
-			//email
-			//description
-			//featured card
+			window.alert(`Deck Name: ${deck.deckName}\nDeck Creator: ${deck.userName}\nDescription: ${deck.description}`);
 		};
 		headerWrapper.append(infoButton);
 		editButton = document.createElement("button");
@@ -96,7 +93,7 @@ const getDeck = (deck) => {
 			cardImage.classList.add("deck-card");
 			cardImage.onclick = (event) => {
 				event.preventDefault();
-				//popup card
+				window.open(`images/cards-hd/${card}.jpg`);
 			};
 			deckArea.append(cardImage);
 		});
@@ -110,7 +107,7 @@ const getDeck = (deck) => {
 			cardImage.classList.add("deck-card");
 			cardImage.onclick = (event) => {
 				event.preventDefault();
-				//popup card
+				window.open(`images/cards-hd/${card}.jpg`);
 			};
 			extraArea.append(cardImage);
 			});
@@ -123,27 +120,47 @@ const getDeck = (deck) => {
 
 const showDecks = async (range) => {
 	if (range < 0) return;
-	const decksJSON = await getDecks();
 	const deckArea = document.getElementById("list-area");
-	deckArea.innerHTML = "";
-	if (decksJSON == 0) {
-		deckArea.innerHTML = "error no decks found";
-	} else {
+	if (searchDecks.length != 0) {
+		deckArea.innerHTML = "";
 		try {
-		deckArea.append(getDeck(decksJSON[range]));
+			deckArea.append(getDeck(searchDecks[range]));
 		} catch {
 			previousPage();
 			return;
 		}
 		try {
-		deckArea.append(getDeck(decksJSON[++range]));
+			deckArea.append(getDeck(searchDecks[++range]));
 		} catch {
 			return;
 		}
 		try {
-		deckArea.append(getDeck(decksJSON[++range]));
+			deckArea.append(getDeck(searchDecks[++range]));
 		} catch {
 			return;
+		}
+	} else {
+		const decksJSON = await getDecks();
+		deckArea.innerHTML = "";
+		if (decksJSON == 0) {
+			deckArea.innerHTML = "error no decks found";
+		} else {
+			try {
+			deckArea.append(getDeck(decksJSON[range]));
+			} catch {
+				previousPage();
+				return;
+			}
+			try {
+			deckArea.append(getDeck(decksJSON[++range]));
+			} catch {
+				return;
+			}
+			try {
+			deckArea.append(getDeck(decksJSON[++range]));
+			} catch {
+				return;
+			}
 		}
 	}
 };
@@ -168,13 +185,70 @@ const previousPage = () => {
 	showDecks(currentRange);
 };
 
-const openSearch = () => {};
+const openSearch = () => {
+	root.style.setProperty("--show-search", "block");
+};
 
-const search = () => {};
+const search = async () => {
+	const deckName = document.getElementById("deck-name").value;
+	const userName = document.getElementById("user-name").value;
+	const errorMessage = document.getElementById("error-message");
+	errorMessage.innerHTML = "";
+	searchDecks = [];
+	if (deckName == "" && userName == "") {
+		errorMessage.innerHTML = "No Search Criteria";
+		return;
+	}
+	const decksJSON = await getDecks();
+	if (deckName != "" && userName != "") {
+		decksJSON.forEach((deck) => {
+			if (deck.deckName.toLowerCase().includes(deckName.toLowerCase()) && deck.userName.toLowerCase().includes(userName.toLowerCase())) {
+				searchDecks.push(deck);
+			}
+		});
+	} else if (deckName == "" && userName != "") {
+		decksJSON.forEach((deck) => {
+			if (deck.userName.toLowerCase().includes(userName.toLowerCase())) {
+				searchDecks.push(deck);
+			}
+		});
+	} else if (deckName != "" && userName == "") {
+		decksJSON.forEach((deck) => {
+			if (deck.deckName.toLowerCase().includes(deckName.toLowerCase())) {
+				searchDecks.push(deck);
+			}
+		});
+	}
+	if (searchDecks.length == 0) {
+		errorMessage.innerHTML = "No Results Found";
+		return;
+	}
+	currentRange = 0;
+	showDecks(currentRange);
+	closeSearch();
+};
 
-const closeSearch = () => {};
+const closeSearch = () => {
+	root.style.setProperty("--show-search", "none");
+};
+
+const clearSearch = () => {
+	searchDecks = [];
+	const deckName = document.getElementById("deck-name");
+	const userName = document.getElementById("user-name");
+	const errorMessage = document.getElementById("error-message");
+	deckName.value = "";
+	userName.value = "";
+	errorMessage.innerHTML = "";
+	currentRange = 0;
+	showDecks(currentRange);
+	closeSearch();
+};
 
 showDecks(currentRange);
 document.getElementById("next-button").onclick = nextPage;
 document.getElementById("previous-button").onclick = previousPage;
-document.getElementById("search-button").onclick = openSearch;
+document.getElementById("open-search-button").onclick = openSearch;
+document.getElementById("close-search-button").onclick = closeSearch;
+document.getElementById("submit-search-button").onclick = search;
+document.getElementById("clear-search-button").onclick = clearSearch;

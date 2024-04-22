@@ -29,6 +29,25 @@
 				<!-- Deck Info Goes Here -->
 			</div>
 		</div>
+		<div id="search-modal" class="modal">
+			<div id="search-veiw" class="modal-content">
+				<p class="modal-close"><button id="close-search-button">X</button></p>
+				<h2>Search</h2>
+				<form id="search">
+					<p class="search-center">
+						<label for="deck-name">Search by Deck Name</label>
+						<input type="text" id="deck-name" name="deck-name" max="20">
+					</p>
+					<p class="search-center">
+						<label for="user-name">Search by User</label>
+						<input type="text" id="user-name" name="user-name" max="20">
+					</p>
+				</form>
+				<p class="search-center" id="error-message"></p>
+				<p class="search-center"><button id="submit-search-button"><h3>Search</h3></button></p>
+				<p class="search-center"><button id="clear-search-button"><h3>Clear Search</h3></button></p>
+			</div>
+		</div>
 		<header>
 			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
 			<h1>Yugioh Goat Format Deck Builder</h1>
@@ -38,7 +57,7 @@
 			<div id="main-content">
 				<div id="list-header">
 					<h2>Deck Lists</h2>
-					<button id="search-button"><h1>&#128270;</h1></button>
+					<button id="open-search-button"><h1>&#128270;</h1></button>
 				</div>
 				<div id="list-area">
 					<p>Loading Decks...</p>

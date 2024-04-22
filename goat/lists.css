@@ -4,10 +4,11 @@
 
 :root {
 	--show-deck: none;
+	--show-search: none;
 }
 
 #list-header {
-	background: var(--yami-color2);
+	background: var(--yami-color2-transparent);
 	display: flex;
 	padding: 10px;
 	flex-direction: row;
@@ -16,8 +17,17 @@
 	border-radius: 25px;
 }
 
+#list-header h2{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#list-header button {
+	height: auto;
+}
+
 .deck-list {
-	background: var(--yami-color2);
+	background: var(--yami-color2-transparent);
 	width: 75%;
 	margin: auto;
 }
@@ -33,6 +43,32 @@
 	width: 25%;
 }
 
+#page-arrows {
+	display: flex;
+}
+
+/* Search Menu */
+
+#search-modal {
+	display: var(--show-search);
+}
+
+#search-view {
+	display: var(--show-search);
+}
+
+.search-center,
+h2 {
+	text-align: center;
+}
+
+#search-modal h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* Deck View */
+
 #deck-modal {
 	display: var(--show-deck);
 }
@@ -41,12 +77,6 @@
 	display: var(--show-deck);
 	width: 90%;
 }
-
-#page-arrows {
-	display: flex;
-}
-
-/* Deck View */
 
 #close-button-wrapper {
 	text-align: right;
