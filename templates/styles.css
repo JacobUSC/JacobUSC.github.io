@@ -1,0 +1,67 @@
+:root {
+	--color1: lightgrey;
+	--color2: darkgreen;
+	--color3: darkolivegreen;
+	--color4: khaki;
+	--color5: white;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: var(--color1);
+}
+
+/* Structure */
+
+main {
+	margin: auto;
+}
+
+.content {
+	background: var(--color4);
+	border: 2px solid var(--color2);
+	margin: auto;
+}
+
+.image {
+	display: block;
+	margin: auto;
+	padding-top: 10px;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+}
+
+/* Typography */
+
+h1 {
+	color: var(--color2);
+	text-align: center;
+}
+
+h2 {
+	color: var(--color3);
+	text-align: center;
+}
+
+h3 {
+	color: var(--color2);
+	text-align: center;
+}
+
+p {
+	color: var(--color2);
+	text-align: center;
+}
+
+a {
+	color: var(--color2);
+}
+
+/* larger Screens*/
+
+@media only screen and (min-width: 768px) {
+	main {
+		width: 70%;
+	}
+}
