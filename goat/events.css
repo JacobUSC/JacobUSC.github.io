@@ -3,23 +3,23 @@
 /* builder.html */
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 #event {
-	border-top: 1px solid var(--yami-color1);
+    border-top: 1px solid var(--yami-color1);
 }
 
 iframe {
-	border-radius: 15px;
-	display: block;
-	margin: auto;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
 }
 
 #event h3 {
-	text-align: center;
+    text-align: center;
 }
 
 #event p {
-	text-align: center;
+    text-align: center;
 }

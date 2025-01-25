@@ -3,87 +3,87 @@
 /* cards.html */
 
 :root {
-	--show-big-card: none;
-	--show-filter: none;
-	--card-list-size: 100px;
-	--card-list-size-mobile: 100px;
+    --show-big-card: none;
+    --show-filter: none;
+    --card-list-size: 100px;
+    --card-list-size-mobile: 100px;
 }
 
 #card-list-header {
-	background: var(--yami-color2-transparent);
-	border-radius: 25px;
-	display: flex;
-	padding: 10px;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+    background: var(--yami-color2-transparent);
+    border-radius: 25px;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #card-list {
-	height: var(--card-list-size-mobile);
-	display: flex;
-	flex-wrap: wrap;
-	overflow: scroll;
-	overflow-x: hidden;
+    height: var(--card-list-size-mobile);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .list-card {
-	border-radius: 15px;
-	padding: 50px;
-	margin: auto;
+    border-radius: 15px;
+    padding: 50px;
+    margin: auto;
 }
 
 #big-card {
-	display: var(--show-big-card);
-	background: var(--yami-color2-transparent);
-	position: fixed;
-	margin: auto;
-	width: 100%;
-	height: 100%;
-	z-index: 1030;
+    display: var(--show-big-card);
+    background: var(--yami-color2-transparent);
+    position: fixed;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 1030;
 }
 
 .big-card {
-	display: block;
-	height: auto;
-	width: 80%;
-	margin: auto;
-	margin-top: 30%;
-	border-radius: 15px;
+    display: block;
+    height: auto;
+    width: 80%;
+    margin: auto;
+    margin-top: 30%;
+    border-radius: 15px;
 }
 
 #filter {
-	display: var(--show-filter);
+    display: var(--show-filter);
 }
 
 #filter p {
-	text-align: center;
+    text-align: center;
 }
 
 #filter h2 {
-	text-align: center;
+    text-align: center;
 }
 
 .fields h3 {
-	text-align: center;
+    text-align: center;
 }
 
 @media only screen and (min-width: 1000px) {
-	#card-list {
-		height: var(--card-list-size);
-	}
+    #card-list {
+        height: var(--card-list-size);
+    }
 
-	.big-card {
-		height: 95%;
-		width: auto;
-		margin-top: 1%;
-	}
+    .big-card {
+        height: 95%;
+        width: auto;
+        margin-top: 1%;
+    }
 
-	.fields {
-		display: flex;
-	}
+    .fields {
+        display: flex;
+    }
 
-	.fields div {
-		margin: auto;
-	}
+    .fields div {
+        margin: auto;
+    }
 }

@@ -8,17 +8,17 @@
 const root = document.querySelector(":root");
 
 const showOverlay = () => {
-	root.style.setProperty("--show-overlay", "block");
+    root.style.setProperty("--show-overlay", "block");
 };
 
 const showNav = () => {
-	showOverlay();
-	root.style.setProperty("--menu", "block");
+    showOverlay();
+    root.style.setProperty("--menu", "block");
 };
 
 const hideNav = () => {
-	root.style.setProperty("--menu", "none");
-	root.style.setProperty("--show-overlay", "none");
+    root.style.setProperty("--menu", "none");
+    root.style.setProperty("--show-overlay", "none");
 };
 
 document.getElementById("nav-button").onclick = showNav;

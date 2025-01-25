@@ -3,139 +3,139 @@
 /* lists.html */
 
 :root {
-	--show-deck: none;
-	--show-search: none;
+    --show-deck: none;
+    --show-search: none;
 }
 
 #list-header {
-	background: var(--yami-color2-transparent);
-	display: flex;
-	padding: 10px;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	border-radius: 25px;
+    background: var(--yami-color2-transparent);
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
 }
 
 #list-header h2{
-	margin-top: 0;
-	margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #list-header button {
-	height: auto;
+    height: auto;
 }
 
 .deck-list {
-	background: var(--yami-color2-transparent);
-	width: 75%;
-	margin: auto;
+    background: var(--yami-color2-transparent);
+    width: 75%;
+    margin: auto;
 }
 
 .deck-list h3,
 .deck-list h4 {
-	text-align: center;
+    text-align: center;
 }
 
 .deck-list-card {
-	display: block;
-	margin: auto;
-	width: 25%;
+    display: block;
+    margin: auto;
+    width: 25%;
 }
 
 #page-arrows {
-	display: flex;
+    display: flex;
 }
 
 /* Search Menu */
 
 #search-modal {
-	display: var(--show-search);
+    display: var(--show-search);
 }
 
 #search-view {
-	display: var(--show-search);
+    display: var(--show-search);
 }
 
 .search-center,
 h2 {
-	text-align: center;
+    text-align: center;
 }
 
 #search-modal h3 {
-	margin-top: 0;
-	margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Deck View */
 
 #deck-modal {
-	display: var(--show-deck);
+    display: var(--show-deck);
 }
 
 #deck-view {
-	display: var(--show-deck);
-	width: 90%;
+    display: var(--show-deck);
+    width: 90%;
 }
 
 #close-button-wrapper {
-	text-align: right;
-	
+    text-align: right;
+    
 }
 
 #deck-header {
-	display: flex;
-	font-family: var(--style-fonts);
+    display: flex;
+    font-family: var(--style-fonts);
 }
 
 #deck-header h1 {
-	margin-top: 0;
-	margin-bottom: 0;
-	margin-right: 25px;
-	margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 25px;
+    margin-left: 10px;
 }
 
 #deck-header button {
-	font-size: 2em;
-	background: none;
-	border: none;
-	margin-left: 15px;
+    font-size: 2em;
+    background: none;
+    border: none;
+    margin-left: 15px;
 }
 
 #deck-area {
-	display: flex;
-	flex-wrap: wrap;
-	width: 99%;
-	margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    margin: auto;
 }
 
 #extra-area {
-	display: flex;
-	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .deck-card {
-	width: 100px;
-	height: auto;
-	margin: auto;
-	margin-bottom: 2px;
+    width: 100px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 2px;
 }
 
 
 /* larger Screens*/
 
 @media only screen and (min-width: 768px) {
-	#list-area {
-		display: flex;
-	}
+    #list-area {
+        display: flex;
+    }
 
-	.deck-list {
-		width: 25%;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
+    .deck-list {
+        width: 25%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
-	.deck-list-card {
-		width: 50%;
-	}
+    .deck-list-card {
+        width: 50%;
+    }
 }

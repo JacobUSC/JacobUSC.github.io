@@ -3,32 +3,32 @@
 /* builder.html */
 
 #contact {
-	background: var(--yami-color3);
+    background: var(--yami-color3);
     margin: auto;
     border-radius: 25px;
-	padding: 5px;
+    padding: 5px;
 }
 
 #contact h1 {
-	text-align: center;
+    text-align: center;
 }
 
 #contact p {
-	margin: auto;
-	margin-bottom: 25px;
-	text-align: center;
+    margin: auto;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 .h-captcha {
-	margin: auto;
-	text-align: center;
+    margin: auto;
+    text-align: center;
 }
 
 #contact-submit {
     border: solid 1px var(--yami-color1);
-	width: 150px;
-	height: 50px;
-	border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
 }
 
 #contact-submit h2 {

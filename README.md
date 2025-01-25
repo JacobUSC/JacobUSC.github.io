@@ -1,1 +1,1 @@
-CSCE 242 Class website
+[My Website](jacobusc.github.io/)

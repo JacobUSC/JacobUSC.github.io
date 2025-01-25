@@ -1,81 +1,81 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Author: Jacob Russell -->
-		<!-- Semester Project CSCE 242-001 -->
-		<!-- Deck Lists Page -->
-		<title>Yugioh Goat Format Deck Builder</title>
-		<link rel="icon" type="image/x-icon" href="images/favicon.png">
-		<link rel="stylesheet" href="styles.css">
-		<link rel="stylesheet" href="nav.css">
-		<link rel="stylesheet" href="lists.css">
-	</head>
-	<body>
-		<div id="transparent-overlay"></div>
-		<nav id="main-nav">
-			<button id="close-nav-button"><h1>X</h1></button>
-			<ul id="page-nav">
-				<a href="index.html"><li><p>Home</p></li></a>
-				<a href="help.html"><li><p>Help</p></li></a>
-				<a href="builder.html"><li><p>Deck Builder</p></li></a>
-				<a href="#"><li><p>Deck Lists</p></li></a>
-				<a href="cards.html"><li><p>Card List</p></li></a>
-				<a href="events.html"><li><p>Events</p></li></a>
-				<a href="contact.html"><li><p>Contact Me</p></li></a>
-			</ul>
-		</nav>
-		<div id="deck-modal" class="modal">
-			<div id="deck-view" class="modal-content">
-				<!-- Deck Info Goes Here -->
-			</div>
-		</div>
-		<div id="search-modal" class="modal">
-			<div id="search-veiw" class="modal-content">
-				<p class="modal-close"><button id="close-search-button">X</button></p>
-				<h2>Search</h2>
-				<form id="search">
-					<p class="search-center">
-						<label for="deck-name">Search by Deck Name</label>
-						<input type="text" id="deck-name" name="deck-name" max="20">
-					</p>
-					<p class="search-center">
-						<label for="user-name">Search by User</label>
-						<input type="text" id="user-name" name="user-name" max="20">
-					</p>
-				</form>
-				<p class="search-center" id="error-message"></p>
-				<p class="search-center"><button id="submit-search-button"><h3>Search</h3></button></p>
-				<p class="search-center"><button id="clear-search-button"><h3>Clear Search</h3></button></p>
-			</div>
-		</div>
-		<header>
-			<a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
-			<h1>Yugioh Goat Format Deck Builder</h1>
-			<button id="nav-button"><h1>&#9765 Menu</h1></button>  
-		</header>
-		<main id="flex-override">
-			<div id="main-content">
-				<div id="list-header">
-					<h2>Deck Lists</h2>
-					<button id="open-search-button"><h1>&#128270;</h1></button>
-				</div>
-				<div id="list-area">
-					<p>Loading Decks...</p>
-				</div>
-				<div id="page-arrows">
-					<button id ="previous-button"><h1>&#9194;</h1></button>
-					<h2 id="page-number">Page 1</h2>
-					<button id ="next-button"><h1>&#9193;</h1></button>
-				</div>
+    <head>
+        <!-- Author: Jacob Russell -->
+        <!-- Semester Project CSCE 242-001 -->
+        <!-- Deck Lists Page -->
+        <title>Yugioh Goat Format Deck Builder</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="lists.css">
+    </head>
+    <body>
+        <div id="transparent-overlay"></div>
+        <nav id="main-nav">
+            <button id="close-nav-button"><h1>X</h1></button>
+            <ul id="page-nav">
+                <a href="index.html"><li><p>Home</p></li></a>
+                <a href="help.html"><li><p>Help</p></li></a>
+                <a href="builder.html"><li><p>Deck Builder</p></li></a>
+                <a href="#"><li><p>Deck Lists</p></li></a>
+                <a href="cards.html"><li><p>Card List</p></li></a>
+                <a href="events.html"><li><p>Events</p></li></a>
+                <a href="contact.html"><li><p>Contact Me</p></li></a>
+            </ul>
+        </nav>
+        <div id="deck-modal" class="modal">
+            <div id="deck-view" class="modal-content">
+                <!-- Deck Info Goes Here -->
+            </div>
+        </div>
+        <div id="search-modal" class="modal">
+            <div id="search-veiw" class="modal-content">
+                <p class="modal-close"><button id="close-search-button">X</button></p>
+                <h2>Search</h2>
+                <form id="search">
+                    <p class="search-center">
+                        <label for="deck-name">Search by Deck Name</label>
+                        <input type="text" id="deck-name" name="deck-name" max="20">
+                    </p>
+                    <p class="search-center">
+                        <label for="user-name">Search by User</label>
+                        <input type="text" id="user-name" name="user-name" max="20">
+                    </p>
+                </form>
+                <p class="search-center" id="error-message"></p>
+                <p class="search-center"><button id="submit-search-button"><h3>Search</h3></button></p>
+                <p class="search-center"><button id="clear-search-button"><h3>Clear Search</h3></button></p>
+            </div>
+        </div>
+        <header>
+            <a href="index.html"><img src="images/logo.png" alt="Yugioh Logo" id="main-logo"></a>
+            <h1>Yugioh Goat Format Deck Builder</h1>
+            <button id="nav-button"><h1>&#9765 Menu</h1></button>  
+        </header>
+        <main id="flex-override">
+            <div id="main-content">
+                <div id="list-header">
+                    <h2>Deck Lists</h2>
+                    <button id="open-search-button"><h1>&#128270;</h1></button>
+                </div>
+                <div id="list-area">
+                    <p>Loading Decks...</p>
+                </div>
+                <div id="page-arrows">
+                    <button id ="previous-button"><h1>&#9194;</h1></button>
+                    <h2 id="page-number">Page 1</h2>
+                    <button id ="next-button"><h1>&#9193;</h1></button>
+                </div>
 
-			</div>
-		</main>
-		<footer>
-			<p>The literal and graphical information presented on this site about Yu-Gi-Oh!, including card images, the attribute, level/rank and type symbols, and card text, is copyright 4K Media Inc, a subsidiary of Konami Digital Entertainment, Inc. This website is not produced by, endorsed by, supported by, or affiliated with 4k Media or Konami Digital Entertainment.</p>
-			<p><a href="https://ygoprodeck.com/">Card Images from YGOPRODeck</a></p>
-			<p>All other content &#169; 2024 Jacob Russell</p>
-		</footer>
-		<script src="script.js"></script>
-		<script src="lists.js"></script>
-	</body>
+            </div>
+        </main>
+        <footer>
+            <p>The literal and graphical information presented on this site about Yu-Gi-Oh!, including card images, the attribute, level/rank and type symbols, and card text, is copyright 4K Media Inc, a subsidiary of Konami Digital Entertainment, Inc. This website is not produced by, endorsed by, supported by, or affiliated with 4k Media or Konami Digital Entertainment.</p>
+            <p><a href="https://ygoprodeck.com/">Card Images from YGOPRODeck</a></p>
+            <p>All other content &#169; 2024 Jacob Russell</p>
+        </footer>
+        <script src="script.js"></script>
+        <script src="lists.js"></script>
+    </body>
 </html>

@@ -1,45 +1,45 @@
 body {
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	background: url(images/background.jpg);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: url(images/background.jpg);
 }
 
 /* Structure */
 
 #boarder {
-	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(1px);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	padding: 5px;
-	width: 80%;
-	margin: auto; /* center horizontally */
-	border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    width: 80%;
+    margin: auto; /* center horizontally */
+    border-radius: 16px;
 }
 
 #content {
-	background: white;
-	border-radius: 5px;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	padding-left: 15px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 15px;
 }
 
 /* Navigation */
 
 #assignments a {
-	text-decoration: none;
-	color: yellowgreen;
+    text-decoration: none;
+    color: yellowgreen;
 }
 
 #assignments a:hover {
-	color: darkblue;
+    color: darkblue;
 }
 
 /* Typography */
 
 h1 {
-	color: black;
+    color: black;
 }
 
 h2 {
-	color: darkblue;
+    color: darkblue;
 }

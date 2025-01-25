@@ -3,176 +3,176 @@
 /* builder.html */
 
 :root {
-	--show-big-card: none;
-	--show-filter: none;
-	--show-upload: none;
-	--card-list-size: 100px;
-	--card-list-size-mobile: 100px;
-	--card-pool-size: auto;
+    --show-big-card: none;
+    --show-filter: none;
+    --show-upload: none;
+    --card-list-size: 100px;
+    --card-list-size-mobile: 100px;
+    --card-pool-size: auto;
 }
 
 #deck {
-	flex: 2;
-	background: var(--yami-color3-transparent);
-	border-radius: 25px;
-	margin: 10px;
-	padding: 0;
+    flex: 2;
+    background: var(--yami-color3-transparent);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 0;
 }
 
 #deck-header {
-	display: flex;
-	background: var(--yami-color2-transparent);
-	padding: 10px;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	border-radius: 25px;
+    display: flex;
+    background: var(--yami-color2-transparent);
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
 }
 
 #deck-area {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 10px;
-	min-height: 300px;
-	height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    min-height: 300px;
+    height: fit-content;
 }
 
 .deck-card {
-	margin: auto;
-	padding: 10px;
+    margin: auto;
+    padding: 10px;
 }
 
 #fusion-deck {
-	border-top: solid 1px var(--yami-color2);
+    border-top: solid 1px var(--yami-color2);
 }
 
 #fusion-deck h3 {
-	background: var(--yami-color2-transparent);
-	color: var(--yami-color1);
-	padding: 20px;
-	padding-left: 10px;
-	border-radius: 25px;
+    background: var(--yami-color2-transparent);
+    color: var(--yami-color1);
+    padding: 20px;
+    padding-left: 10px;
+    border-radius: 25px;
 }
 
 #fusion-deck-area {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 10px;
-	min-height: 300px;
-	height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    min-height: 300px;
+    height: fit-content;
 }
 
 #card-pool {
-	flex: 1;
-	background: var(--yami-color3-transparent);
-	border-radius: 25px;
-	margin: 10px;
-	padding: 0;
+    flex: 1;
+    background: var(--yami-color3-transparent);
+    border-radius: 25px;
+    margin: 10px;
+    padding: 0;
 }
 
 #card-pool-header {
-	background: var(--yami-color2-transparent);
-	border-radius: 25px;
-	display: flex;
-	padding: 10px;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+    background: var(--yami-color2-transparent);
+    border-radius: 25px;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #card-list {
-	display: flex;
-	padding: 10px;
-	overflow: scroll;
+    display: flex;
+    padding: 10px;
+    overflow: scroll;
 }
 
 .list-card {
-	border-radius: 15px;
-	width: 150px;
-	padding: 10px;
-	margin: auto;
+    border-radius: 15px;
+    width: 150px;
+    padding: 10px;
+    margin: auto;
 }
 
 #big-card {
-	display: var(--show-big-card);
-	background: var(--yami-color2-transparent);
-	position: fixed;
-	margin: auto;
-	width: 100%;
-	height: 100%;
-	z-index: 1030;
+    display: var(--show-big-card);
+    background: var(--yami-color2-transparent);
+    position: fixed;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 1030;
 }
 
 .big-card {
-	display: block;
-	height: auto;
-	width: 80%;
-	margin: auto;
-	margin-top: 30%;
-	border-radius: 15px;
+    display: block;
+    height: auto;
+    width: 80%;
+    margin: auto;
+    margin-top: 30%;
+    border-radius: 15px;
 }
 
 #filter {
-	display: var(--show-filter);
+    display: var(--show-filter);
 }
 
 #filter p {
-	text-align: center;
+    text-align: center;
 }
 
 #filter h2 {
-	text-align: center;
+    text-align: center;
 }
 
 .fields h3 {
-	text-align: center;
+    text-align: center;
 }
 
 #upload {
-	display: var(--show-upload);
+    display: var(--show-upload);
 }
 
 #upload h2 {
-	text-align: center;
+    text-align: center;
 }
 
 #upload p {
-	text-align: center;
+    text-align: center;
 }
 
 @media only screen and (min-width: 1000px) {
-	#card-area {
-		display: block;
-		height: var(--pool-height);
-	}
+    #card-area {
+        display: block;
+        height: var(--pool-height);
+    }
 
-	.deck-card {
-		width: 150px;
-	}
+    .deck-card {
+        width: 150px;
+    }
 
-	#card-pool {
-		height: var(--card-pool-size);
-	}
+    #card-pool {
+        height: var(--card-pool-size);
+    }
 
-	#card-list {
-		height: var(--card-list-size);
-		display: flex;
-		flex-wrap: wrap;
-		overflow: scroll;
-		overflow-x: hidden;
-	}
+    #card-list {
+        height: var(--card-list-size);
+        display: flex;
+        flex-wrap: wrap;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 
-	.big-card {
-		height: 95%;
-		width: auto;
-		margin-top: 1%;
-	}
+    .big-card {
+        height: 95%;
+        width: auto;
+        margin-top: 1%;
+    }
 
-	.fields {
-		display: flex;
-	}
+    .fields {
+        display: flex;
+    }
 
-	.fields div {
-		margin: auto;
-	}
+    .fields div {
+        margin: auto;
+    }
 }

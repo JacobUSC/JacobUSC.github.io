@@ -13,31 +13,31 @@
  */
 
 const getCardDB = async () => {
-	const url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?&enddate=2005-09-30&dateregion=tcg";
-	try {
-		const response = await fetch(url);
-		return response.json();
-	} catch (error) {
-		console.log(error);
-	}
+    const url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?&enddate=2005-09-30&dateregion=tcg";
+    try {
+        const response = await fetch(url);
+        return response.json();
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 //lists the url to download every high res image file
 const getImagesHD = async () => {
-	const cards = await getCardDB();
-	cards.data.forEach((card) => {
-		console.log(card.card_images[0].image_url);
-	});
-	console.log("====Complete====");
+    const cards = await getCardDB();
+    cards.data.forEach((card) => {
+        console.log(card.card_images[0].image_url);
+    });
+    console.log("====Complete====");
 };
 
 //lists the url to download every low res image file
 const getImages = async () => {
-	const cards = await getCardDB();
-	cards.data.forEach((card) => {
-		console.log(card.card_images[0].image_url_small);
-	});
-	console.log("====Complete====");
+    const cards = await getCardDB();
+    cards.data.forEach((card) => {
+        console.log(card.card_images[0].image_url_small);
+    });
+    console.log("====Complete====");
 };
 
 //getImagesHD();
