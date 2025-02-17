@@ -1,0 +1,60 @@
+body {
+    background: aqua;
+    font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", sans-serif;
+}
+h1 {
+    color: magenta;
+    text-align: center;
+}
+h2 {
+    color: cyan;
+    text-align: center;
+}
+h3 {
+    color: magenta;
+    text-align: center;
+}
+h3:hover {
+    color: lime;
+}
+p {
+    color: magenta;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+footer {
+    background-color: black;
+    border-radius: 15px;
+}
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.ham {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 30px;
+    background: magenta;
+    border-radius: 15px;
+    box-shadow: 5px 8px #401201;
+    display: block;
+    margin: auto;
+
+}
+.ham img {
+    height: 300px;
+    width: 400px;
+    border: 2px solid cyan;
+    margin-right: 20px;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+}
+.ham img:hover {
+    border: 2px solid lawngreen;
+}
