@@ -1,26 +1,87 @@
+/* Author: Jacob Russell */
+
 :root {
-    --color1: lightgrey;
-    --color2: darkgreen;
-    --color3: darkolivegreen;
-    --color4: khaki;
-    --color5: white;
+    --color1: #0F172A;
+    --color2: #234E6D;
+    --color2Trans: rgba(35, 78, 109, .2);
+    --color3: #5EEAD4;
+    --color4: #F4B942;
+    --color5: #F8FAFC;
+    --space-sm: clamp(0.5rem, 1vw, 0.75rem);
+    --space-md: clamp(1rem, 2vw, 1.5rem);
+    --space-lg: clamp(1.5rem, 3vw, 2.5rem);
+    --radius-lg: 1.5rem;
+    --max-width: 100rem;
+    --font-size-h1: clamp(1.75rem, 3vw, 2.5rem);
+    --font-size-h2: clamp(1.25rem, 2vw, 1.75rem);
+    --font-size-h3: clamp(1.05rem, 1.6vw, 1.3rem);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-family: Georgia, Garamond, 'Times New Roman', Times, serif;
     background: var(--color1);
+    line-height: 1.6;
+    color: var(--color5);
 }
 
 /* Structure */
 
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+}
+
 main {
-    margin: auto;
+    width: min(96%, var(--max-width));
+    margin: 0 auto;
 }
 
 .content {
-    background: var(--color4);
-    border: 2px solid var(--color2);
-    margin: auto;
+    background: var(--color2Trans);
+    border: 5px solid var(--color2);
+    border-radius: var(--radius-lg);
+    margin: 0 auto var(--space-lg);
+    padding: var(--space-md);
+}
+
+.title {
+    text-align: center;
+}
+
+nav {
+    padding: 0;
+    margin: 0 auto var(--space-sm);
+    width: min(100%, var(--max-width));
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 10rem;
+    min-width: 8rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .image {
@@ -29,39 +90,157 @@ main {
     padding-top: 10px;
     width: auto;
     height: auto;
-    max-width: 100%;
+}
+
+.interests {
+    list-style-type: circle;
+}
+
+.featuredProjectList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+.featuredProject {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    border: 2px solid var(--color2);
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.featuredProject img {
+    display: block;
+    width: 100%;
+    height: clamp(12rem, 24vw, 16rem);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.75rem;
+}
+
+.featuredProject p {
+    text-align: left;
+    margin: 0;
 }
 
 /* Typography */
 
 h1 {
-    color: var(--color2);
+    color: var(--color3);
     text-align: center;
+    font-size: var(--font-size-h1);
+    margin: 0 0 0.25rem;
 }
 
 h2 {
-    color: var(--color3);
+    color: var(--color4);
     text-align: center;
+    font-size: var(--font-size-h2);
+    margin: 0 0 0.5rem;
 }
 
 h3 {
-    color: var(--color2);
+    color: var(--color5);
     text-align: center;
+    font-size: var(--font-size-h3);
+    margin: 0 0 0.5rem;
 }
 
 p {
-    color: var(--color2);
+    color: var(--color5);
     text-align: center;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    margin: 0 0 0.75rem;
+}
+
+.content p {
+    text-align: left;
 }
 
 a {
-    color: var(--color2);
+    color: var(--color3);
 }
 
-/* larger Screens*/
+.title h1,
+.title h2 {
+    margin: 0 0 0.25rem;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li:hover {
+    background-color: var(--color3);
+    color: var(--color1);
+}
+
+nav h2 {
+    text-align: center;
+    display: block;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.5rem);
+    margin: 0;
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+
+.featuredProjectList a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* larger Screens */
 
 @media only screen and (min-width: 768px) {
+    header {
+        width: 100%;
+        height: fit-content;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-lg);
+        padding: var(--space-md) clamp(1.25rem, 3vw, 2rem);
+    }
+
+    .title {
+        text-align: left;
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    nav {
+        height: auto;
+        margin: 0;
+        width: auto;
+        flex: 1;
+    }
+
+    nav ul {
+        background: none;
+        width: auto;
+        margin: 0 0 0 auto;
+        padding: 0;
+        overflow: hidden;
+        justify-content: flex-end;
+        gap: var(--space-sm);
+    }
+
+    nav li {
+        height: auto;
+        flex: 0 0 auto;
+        min-width: unset;
+    }
+
     main {
-        width: 70%;
+        width: min(100%, var(--max-width));
+    }
+
+    .featuredProjectList {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
     }
 }

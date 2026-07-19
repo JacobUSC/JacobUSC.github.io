@@ -1,0 +1,49 @@
+/* Author: Jacob Russell */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+form h3 {
+    margin: 0;
+    text-align: left;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.75rem;
+    font: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid var(--color3);
+    outline-offset: 2px;
+    border-color: var(--color3);
+}
+
+form textarea {
+    min-height: 10rem;
+    resize: vertical;
+}
+
+form button {
+    background: var(--color4);
+    color: var(--color1);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}

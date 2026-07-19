@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Jacob Russell -->
+        <title>Jacob Russell - Contact</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="contact.css"/>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png"/>
+    </head>
+    <body>
+        <header>
+            <div class="title">
+                <h1>Jacob Russell</h1>
+                <h2>B.A Media Arts / Computer Science</h2>
+            </div>
+            <nav>
+                <ul>
+                    <a href="#"><li><h2>Home</h2></li></a>
+                    <a href="projects.html"><li><h2>Projects</h2></li></a>
+                    <a href="contact.html"><li><h2>Contact</h2></li></a>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="content">
+                <h2>Contact Me</h2>
+                <form method="POST" id="form">
+                    <input type="hidden" name="access_key" value="8b399036-7b9e-476b-a59d-d739923dfae9">
+                    <h3>Name</h3>
+                    <input type="text" name="name" required>
+                    <h3>Email</h3>
+                    <input type="email" name="email" required>
+                    <h3>Subject</h3>
+                    <input type="text" name="subject" required>
+                    <h3>Message</h3>
+                    <textarea name="message" required></textarea>
+                    <button type="submit">Submit</button>
+                    <div id="result"></div>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <p>This Website and <b>Everything</b> within was made without the use of Generative A.I.</p>
+            <p>&copy; 2026 Jacob Russell</p>
+        </footer>
+        <script src="script.js"></script>
+        <script src="contact.js"></script>
+    </body>
+</html>
